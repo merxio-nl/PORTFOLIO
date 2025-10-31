@@ -19,6 +19,7 @@
     .card:hover { transform: translateY(-2px); }
     .tag { border: 1px solid rgba(255,255,255,.2); }
     a.link { text-decoration: underline; text-underline-offset: 2px; }
+    .thumb img { object-position: center; }
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-900 to-black text-neutral-100 selection:bg-white/20">
@@ -62,7 +63,7 @@
         <div class="text-sm text-neutral-400">Обновлено: <span id="lastUpdated"></span></div>
       </div>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition">
+        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition thumb">
           <img class="aspect-video w-full object-cover" src="assets/img/rugflag.webp" alt="Скрин RugFlag" loading="lazy" />
           <div class="p-5">
             <h3 class="text-lg font-semibold">RugFlag — студия ковров (NL)</h3>
@@ -79,7 +80,7 @@
           </div>
         </article>
 
-        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition">
+        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition thumb">
           <img class="aspect-video w-full object-cover" src="assets/img/universal-plug.webp" alt="Скрин Universal Plug" loading="lazy" />
           <div class="p-5">
             <h3 class="text-lg font-semibold">Universal Plug — аксессуары</h3>
@@ -96,7 +97,7 @@
           </div>
         </article>
 
-        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition">
+        <article class="card rounded-2xl overflow-hidden border border-white/10 glass transition thumb">
           <img class="aspect-video w-full object-cover" src="assets/img/apaxic-towing.webp" alt="Скрин ApaxiC Towing" loading="lazy" />
           <div class="p-5">
             <h3 class="text-lg font-semibold">ApaxiC Towing — буксировочная компания (US)</h3>
@@ -151,6 +152,7 @@
             <li>🟢 WhatsApp: <a class="link" target="_blank" rel="noopener" href="https://wa.me/31657337248">+31 6 57337248</a></li>
           </ul>
         </div>
+        <!--
         <form class="glass rounded-2xl p-6 border border-white/10" onsubmit="event.preventDefault(); alert('Спасибо! На GitHub Pages используйте Formspree/Getform для настоящей формы.');">
           <label class="block text-sm">Ваш email</label>
           <input class="mt-1 w-full px-3 py-2 rounded-lg bg-black/30 border border-white/10" type="email" required placeholder="you@example.com" />
@@ -159,6 +161,7 @@
           <button class="mt-4 px-4 py-2 rounded-xl bg-white text-black font-medium hover:opacity-90">Отправить</button>
           <p class="mt-2 text-xs text-neutral-400">Демо‑форма.</p>
         </form>
+        -->
       </div>
     </section>
   </main>
