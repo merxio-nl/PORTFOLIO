@@ -37,9 +37,30 @@ Claude Code.
   such need for a decision instead of assuming one.
 - Prefer small, reviewable changes over large or speculative ones.
 
+## Repository/PR handoff to ChatGPT
+
+For implementation tasks that produce repository changes, follow this
+sequence (see `docs/WORKFLOW.md` for full detail):
+
+1. Work on a dedicated feature branch.
+2. Verify the implementation before reporting completion.
+3. Only after explicit owner authorization to publish the work, commit and
+   push the feature branch.
+4. Create a GitHub Pull Request when GitHub CLI/API access is available,
+   using the PR description structure defined in `docs/WORKFLOW.md`
+   (Summary, Files changed, Verification, Issues/limitations, Decisions
+   needed, Review focus). The PR is the primary handoff artifact to
+   ChatGPT, not a separate report.
+5. Creating a report or recommending a next step never authorizes
+   merge/deploy — that authorization comes from the repository owner only.
+- Do not create a continuously modified `STATUS.md` or similar log for
+  routine task reports, and do not store chat transcripts in the
+  repository.
+
 ## Reporting
 
-After each implementation task, report:
+After each implementation task (whether or not a PR is created), report in
+chat:
 
 1. Files changed.
 2. Verification performed (tests run, Playwright checks, manual review).
