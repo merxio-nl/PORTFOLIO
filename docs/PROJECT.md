@@ -25,8 +25,10 @@ design decisions are recorded here.
 
 ## Current implementation (as found in the repository)
 
-- Static site: plain HTML/CSS/JS, no build tooling, no `package.json`, no
-  framework.
+- Static site: single `index.html`, styled with Tailwind CSS loaded via CDN
+  (`cdn.tailwindcss.com`) plus a small block of inline custom CSS, and
+  vanilla JavaScript (inline `<script>`, no framework). No `package.json`,
+  no build tooling.
 - Top-level structure: `index.html`, `robots.txt`, `sitemap.xml`, `assets/img/`,
   `favicon/` (`favicon.ico`, `favicon.svg`, `site.webmanifest`).
 - `README.md` states: "Portfolio (no contact form). Upload to GitHub Pages.
