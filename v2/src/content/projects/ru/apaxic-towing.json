@@ -1,0 +1,23 @@
+{
+  "title": "Apaxic Towing",
+  "category": "Эвакуация и помощь на дороге · США",
+  "tagline": "Лаконичный быстрый лендинг для американской эвакуационной компании — с понятными кнопками действия.",
+  "featured": false,
+  "order": 2,
+  "summary": "Компактный лендинг для эвакуационной компании: понятные призывы к действию и высокая скорость загрузки.",
+
+  "location": "Бонни-Лейк, Вашингтон, США",
+
+  "liveUrl": "https://apaxictowing.com",
+  "tags": ["Лендинг", "Клиентский проект", "Эвакуация и помощь на дороге", "США"],
+
+  "coverImage": "/images/projects/apaxic-towing/site/desktop.png",
+  "coverImageAlt": "Главный экран Apaxic Towing: эвакуатор ночью, заголовок «Fast & Reliable Towing Service» и кнопки звонка и WhatsApp",
+
+  "siteShowcase": [
+    { "src": "/images/projects/apaxic-towing/site/desktop.png", "alt": "Скриншот главной страницы Apaxic Towing на десктопе с зоной обслуживания и кнопками звонка и WhatsApp" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/apaxic-towing/site/mobile.png", "alt": "Мобильный скриншот главного экрана Apaxic Towing" }
+  ]
+}

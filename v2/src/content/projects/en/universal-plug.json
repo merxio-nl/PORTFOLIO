@@ -1,0 +1,28 @@
+{
+  "title": "Universal Plug",
+  "category": "Smoking accessories · Netherlands",
+  "tagline": "A product site for a heat-resistant bottle-hookah cap, with color options and Telegram/WhatsApp ordering.",
+  "featured": false,
+  "order": 4,
+  "summary": "A small Netherlands-based business selling a heat-resistant cap accessory for DIY bottle hookahs. Product site with color variants, UTM/QR-tracked links, and ordering through Telegram.",
+
+  "location": "Netherlands (ships to EU)",
+
+  "liveUrl": "https://merxio-nl.github.io/universal-plug",
+  "repoUrl": "https://github.com/merxio-nl/universal-plug",
+  "tags": ["Smoking accessories", "E-commerce", "Telegram ordering", "NL/EU delivery"],
+
+  "coverImage": "/images/projects/universal-plug/site/desktop.png",
+  "coverImageAlt": "Universal Plug product site showing a heat-resistant bottle-hookah cap in green and blue color options",
+
+  "siteShowcase": [
+    { "src": "/images/projects/universal-plug/site/desktop.png", "alt": "Desktop screenshot of the Universal Plug product page, with the product photo, features and ordering buttons" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/universal-plug/site/mobile.png", "alt": "Mobile screenshot of the Universal Plug product page" }
+  ],
+  "workGallery": [
+    { "src": "/images/projects/universal-plug/product-main.png", "alt": "Product photo of the Universal Plug cap in green and blue, shown at an angle with its metal mesh insert visible" },
+    { "src": "/images/projects/universal-plug/product-top.jpg", "alt": "Top-down product photo of the Universal Plug cap in blue, showing the perforated metal insert" }
+  ]
+}

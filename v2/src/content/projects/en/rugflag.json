@@ -1,0 +1,24 @@
+{
+  "title": "RugFlag",
+  "category": "Handmade rug studio · Netherlands",
+  "tagline": "A bilingual landing page for a rug studio, shipped as lightweight static hosting.",
+  "featured": false,
+  "order": 3,
+  "summary": "A multilingual (EN/NL) landing page for a rug studio, built as a lightweight static site on GitHub Pages.",
+
+  "location": "Netherlands",
+
+  "liveUrl": "https://merxio-nl.github.io/RugFlagFixed/index.html",
+  "repoUrl": "https://github.com/merxio-nl/RugFlagFixed",
+  "tags": ["HTML/CSS/JS", "i18n", "GitHub Pages"],
+
+  "coverImage": "/images/projects/rugflag/site/desktop.png",
+  "coverImageAlt": "RugFlag homepage showing a close-up photo of colorful handmade tufted rugs with cartoon and pop-culture designs",
+
+  "siteShowcase": [
+    { "src": "/images/projects/rugflag/site/desktop.png", "alt": "Desktop screenshot of the RugFlag homepage, showing handmade tufted rugs and the site navigation" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/rugflag/site/mobile.png", "alt": "Mobile screenshot of the RugFlag homepage" }
+  ]
+}

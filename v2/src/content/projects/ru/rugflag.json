@@ -1,0 +1,24 @@
+{
+  "title": "RugFlag",
+  "category": "Студия ковров ручной работы · Нидерланды",
+  "tagline": "Двуязычный лендинг для студии ковров, размещённый как лёгкий статический сайт.",
+  "featured": false,
+  "order": 3,
+  "summary": "Многоязычный (EN/NL) лендинг для студии ковров ручной работы на GitHub Pages.",
+
+  "location": "Нидерланды",
+
+  "liveUrl": "https://merxio-nl.github.io/RugFlagFixed/index.html",
+  "repoUrl": "https://github.com/merxio-nl/RugFlagFixed",
+  "tags": ["HTML/CSS/JS", "Мультиязычность", "GitHub Pages"],
+
+  "coverImage": "/images/projects/rugflag/site/desktop.png",
+  "coverImageAlt": "Главная страница RugFlag с фотографией ярких ковров ручной работы с мультяшными принтами",
+
+  "siteShowcase": [
+    { "src": "/images/projects/rugflag/site/desktop.png", "alt": "Скриншот главной страницы RugFlag на десктопе с коврами ручной работы и навигацией" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/rugflag/site/mobile.png", "alt": "Мобильный скриншот главной страницы RugFlag" }
+  ]
+}

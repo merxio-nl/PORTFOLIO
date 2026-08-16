@@ -1,0 +1,47 @@
+---
+// A restrained device composition — a browser frame with an optional
+// overlapping phone frame — built from real site screenshots. No skeuomorphic
+// bezels or gloss: just enough framing to read as "the actual website."
+interface Props {
+  desktopSrc: string;
+  desktopAlt: string;
+  mobileSrc?: string;
+  mobileAlt?: string;
+  eager?: boolean;
+}
+
+const { desktopSrc, desktopAlt, mobileSrc, mobileAlt, eager = false } = Astro.props;
+---
+
+<div class="relative">
+  <div
+    class="overflow-hidden rounded-lg border border-[var(--color-hairline-strong)] bg-[var(--color-surface)]"
+  >
+    <div
+      class="flex items-center gap-1.5 border-b border-[var(--color-hairline)] bg-[var(--color-surface-raised)] px-3 py-2"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+    </div>
+    <img
+      src={desktopSrc}
+      alt={desktopAlt}
+      class="aspect-[16/10] w-full object-cover object-top"
+      loading={eager ? 'eager' : 'lazy'}
+    />
+  </div>
+
+  {
+    mobileSrc && (
+      <div class="absolute -bottom-[7%] right-[5%] w-[24%] min-w-[56px] overflow-hidden rounded-[16%] border-[3px] border-[var(--color-surface-raised)] bg-[var(--color-surface)]">
+        <img
+          src={mobileSrc}
+          alt={mobileAlt ?? ''}
+          class="aspect-[9/19] w-full object-cover object-top"
+          loading={eager ? 'eager' : 'lazy'}
+        />
+      </div>
+    )
+  }
+</div>

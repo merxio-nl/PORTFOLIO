@@ -1,0 +1,50 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const steps = [
+  { name: t('process.discover.name'), detail: t('process.discover.detail') },
+  { name: t('process.define.name'), detail: t('process.define.detail') },
+  { name: t('process.design.name'), detail: t('process.design.detail') },
+  { name: t('process.build.name'), detail: t('process.build.detail') },
+  { name: t('process.launch.name'), detail: t('process.launch.detail') },
+];
+---
+
+<section class="border-t border-[var(--color-hairline)] py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-6 md:px-10">
+    <div data-reveal class="max-w-xl">
+      <p class="text-xs tracking-[0.16em] text-[var(--color-brass)] uppercase">
+        {t('process.eyebrow')}
+      </p>
+      <h2 class="mt-2 font-display text-2xl font-semibold text-[var(--color-paper)] sm:text-3xl">
+        {t('process.heading')}
+      </h2>
+    </div>
+
+    <ol
+      data-reveal
+      class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-5 md:gap-5"
+    >
+      {
+        steps.map((step, index) => (
+          <li class="border-t border-[var(--color-hairline-strong)] pt-4">
+            <span class="font-display text-xs text-[var(--color-brass)]">0{index + 1}</span>
+            <h3 class="mt-2 font-display text-base font-semibold text-[var(--color-paper)]">
+              {step.name}
+            </h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-[var(--color-paper-muted)]">
+              {step.detail}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

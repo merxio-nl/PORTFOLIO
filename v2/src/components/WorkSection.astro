@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import WorkCard from './WorkCard.astro';
+import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`))).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const featured = projects.find((p) => p.data.featured) ?? projects[0];
+const rest = projects.filter((p) => p !== featured);
+---
+
+<section id="work" class="border-t border-[var(--color-hairline)] py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-6 md:px-10">
+    <div data-reveal class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-xs tracking-[0.16em] text-[var(--color-brass)] uppercase">
+          {t('work.eyebrow')}
+        </p>
+        <h2 class="mt-2 font-display text-2xl font-semibold text-[var(--color-paper)] sm:text-3xl">
+          {t('work.heading')}
+        </h2>
+      </div>
+      <a
+        href={localizedPath('/work/', lang)}
+        class="inline-flex items-center gap-2 text-sm text-[var(--color-paper-muted)] transition-colors hover:text-[var(--color-paper)]"
+      >
+        {t('work.viewAll')}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {featured && (
+        <div class="sm:col-span-2 lg:col-span-2">
+          <WorkCard project={featured} lang={lang} eager />
+        </div>
+      )}
+      {rest.map((project) => (
+        <WorkCard project={project} lang={lang} />
+      ))}
+    </div>
+  </div>
+</section>

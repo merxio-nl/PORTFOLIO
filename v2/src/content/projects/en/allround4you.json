@@ -1,0 +1,48 @@
+{
+  "title": "ALLROUND4YOU",
+  "category": "Construction & renovation · Netherlands",
+  "tagline": "A one-page site that turns a WhatsApp-only contractor into a business people can research before they call.",
+  "featured": true,
+  "order": 1,
+  "summary": "A Dutch construction business with 20+ years of experience had no website — every relationship started cold on WhatsApp. JOMO built a single page the owner could send as a link.",
+
+  "client": "ALLROUND4YOU Bouw & Service",
+  "role": "End-to-end: IA, design, content, development, domain and hosting",
+  "year": "2026",
+  "location": "Netherlands (client active nationwide)",
+  "timeline": "About 20 calendar days, including client feedback cycles",
+
+  "liveUrl": "https://allround4you.com",
+  "tags": ["One-page site", "Client project", "Construction & renovation", "Dutch"],
+
+  "coverImage": "/images/projects/allround4you/hero.jpg",
+  "coverImageAlt": "Renovated open-plan kitchen with exposed timber ceiling beams and pendant lighting, part of ALLROUND4YOU's completed work",
+
+  "facts": [
+    { "label": "Client", "value": "ALLROUND4YOU Bouw & Service" },
+    { "label": "Industry", "value": "Construction & renovation" },
+    { "label": "Origin", "value": "Personal recommendation" },
+    { "label": "Scope", "value": "IA, design, content, build, hosting" },
+    { "label": "Revisions", "value": "~6 client rounds" },
+    { "label": "Timeline", "value": "~20 days, incl. feedback" }
+  ],
+
+  "problem": "The owner had 20+ years of experience but no way to show it. Every relationship started cold on WhatsApp, with nothing to send a prospect before they decided whether to call.",
+  "solution": "A single, well-organized page rather than a multi-page site — enough to build trust in under a minute. It covers all twelve service categories, a real project gallery, and direct call/WhatsApp actions. Built end-to-end — IA, design, content, development, domain and hosting — through six client revision rounds.",
+  "outcome": "Delivered in about 20 days including feedback cycles. The client was satisfied and said he'd recommend JOMO to other contacts.",
+
+  "workGallery": [
+    { "src": "/images/projects/allround4you/hero.jpg", "alt": "Renovated open-plan kitchen with exposed timber ceiling beams and pendant lighting, part of ALLROUND4YOU's completed work" },
+    { "src": "/images/projects/allround4you/gallery/work-6.jpg", "alt": "Built-in kitchen cabinetry finished in dark wood veneer, next to a full-height glazed door opening onto a garden" },
+    { "src": "/images/projects/allround4you/gallery/work-8.jpg", "alt": "Facade renovation in progress on a two-storey house, with new dark cladding, scaffolding and ladders in place" },
+    { "src": "/images/projects/allround4you/gallery/work-4.jpg", "alt": "Finished living room with an exposed timber beam ceiling, an arched floor lamp and a view onto the garden" },
+    { "src": "/images/projects/allround4you/gallery/work-22.webp", "alt": "New patio being laid outside a garden room, with plain grey tiles and one patterned decorative tile as an accent" }
+  ],
+  "siteShowcase": [
+    { "src": "/images/projects/allround4you/site/desktop.png", "alt": "Desktop screenshot of the ALLROUND4YOU homepage hero: headline, WhatsApp and call buttons, and three trust badges over a project photo" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/allround4you/site/mobile-hero.png", "alt": "Mobile screenshot of the ALLROUND4YOU hero section, with the headline, WhatsApp button and call button stacked full-width" },
+    { "src": "/images/projects/allround4you/site/mobile-about.png", "alt": "Mobile screenshot of the ALLROUND4YOU about and services introduction, stacked below the hero" }
+  ]
+}

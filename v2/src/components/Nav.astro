@@ -1,0 +1,135 @@
+---
+import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const links = [
+  { href: localizedPath('/#work', lang), label: t('nav.work') },
+  { href: localizedPath('/#services', lang), label: t('nav.services') },
+  { href: localizedPath('/#studio', lang), label: t('nav.studio') },
+  { href: localizedPath('/#creator', lang), label: t('nav.creator') },
+  { href: localizedPath('/#contact', lang), label: t('nav.contact') },
+];
+
+// The EN/RU trees mirror each other 1:1, so swapping the /ru prefix maps
+// the current page to its counterpart in the other language.
+const currentPath = Astro.url.pathname;
+const otherLangHref =
+  lang === 'en'
+    ? `/ru${currentPath === '/' ? '' : currentPath}`
+    : currentPath.replace(/^\/ru/, '') || '/';
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-hairline)] bg-[var(--color-ink)]"
+>
+  <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16 md:px-10">
+    <a
+      href={localizedPath('/', lang)}
+      class="font-display text-base font-semibold tracking-[0.01em] text-[var(--color-paper)] md:text-lg"
+    >
+      JOMO<span class="text-[var(--color-brass)]">.</span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden items-center gap-8 md:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-[var(--color-paper-muted)] transition-colors duration-200 hover:text-[var(--color-paper)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3 md:gap-4">
+      <a
+        href={otherLangHref}
+        title={t('nav.langSwitch')}
+        class="rounded-full border border-[var(--color-hairline-strong)] px-2.5 py-1 text-xs tracking-[0.06em] text-[var(--color-paper-muted)] transition-colors hover:border-[var(--color-brass)] hover:text-[var(--color-paper)]"
+      >
+        {lang === 'en' ? 'RU' : 'EN'}
+      </a>
+      <a
+        href={localizedPath('/#contact', lang)}
+        class="hidden rounded-full bg-[var(--color-paper)] px-4 py-2 text-sm font-medium text-[var(--color-ink)] transition-opacity duration-200 hover:opacity-90 sm:inline-block"
+      >
+        {t('nav.startProject')}
+      </a>
+
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-mobile-menu"
+        class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+      >
+        <span class="sr-only">Toggle menu</span>
+        <span
+          id="nav-bar-1"
+          class="block h-px w-5 bg-[var(--color-paper)] transition-transform duration-200"
+        ></span>
+        <span
+          id="nav-bar-2"
+          class="block h-px w-5 bg-[var(--color-paper)] transition-opacity duration-200"
+        ></span>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    id="nav-mobile-menu"
+    aria-label="Mobile"
+    class="fixed inset-x-0 top-14 bottom-0 hidden overflow-y-auto border-t border-[var(--color-hairline)] bg-[var(--color-ink)] md:hidden"
+  >
+    <div class="flex flex-col gap-1 px-6 py-6">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-md px-2 py-3 text-base text-[var(--color-paper-muted)] transition-colors duration-200 hover:text-[var(--color-paper)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={localizedPath('/#contact', lang)}
+        class="mt-3 rounded-full bg-[var(--color-paper)] px-4 py-3 text-center text-sm font-medium text-[var(--color-ink)]"
+      >
+        {t('nav.startProject')}
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-mobile-menu');
+  const bar1 = document.getElementById('nav-bar-1');
+  const bar2 = document.getElementById('nav-bar-2');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    bar1?.classList.toggle('rotate-45', isOpen);
+    bar1?.classList.toggle('translate-y-[3px]', isOpen);
+    bar2?.classList.toggle('opacity-0', isOpen);
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      bar1?.classList.remove('rotate-45', 'translate-y-[3px]');
+      bar2?.classList.remove('opacity-0');
+    });
+  });
+</script>
