@@ -35,6 +35,13 @@ Claude Code.
   explicitly instructed.
 - Do not silently change product requirements or architecture. Surface any
   such need for a decision instead of assuming one.
+- Major architecture or technology-stack decisions (framework migrations,
+  new build tooling, replacing an already-accepted stack) require explicit
+  repository-owner approval before implementation. Proposing and explaining
+  a change is fine; implementing it without that approval is not. An
+  already-accepted stack (e.g. the V2 Astro/Tailwind/Content Collections
+  setup) should not be rolled back or replaced within a refinement/polish
+  task — only within a task that explicitly scopes that decision.
 - Prefer small, reviewable changes over large or speculative ones.
 
 ## Repository/PR handoff to ChatGPT

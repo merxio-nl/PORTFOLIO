@@ -8,13 +8,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const leaveOut = [
-  t('studio.leaveOut1'),
-  t('studio.leaveOut2'),
-  t('studio.leaveOut3'),
-  t('studio.leaveOut4'),
-];
-const keep = [t('studio.keep1'), t('studio.keep2'), t('studio.keep3'), t('studio.keep4')];
+const focus = [t('studio.focus1'), t('studio.focus2'), t('studio.focus3'), t('studio.focus4')];
 ---
 
 <section id="studio" class="border-t border-[var(--color-hairline)] py-16 md:py-20">
@@ -33,30 +27,24 @@ const keep = [t('studio.keep1'), t('studio.keep2'), t('studio.keep3'), t('studio
 
     <div
       data-reveal
-      class="mt-10 grid gap-px overflow-hidden rounded-lg border border-[var(--color-hairline)] bg-[var(--color-hairline)] md:grid-cols-2"
+      class="mt-10 rounded-lg border border-[var(--color-hairline)] bg-[var(--color-surface)] p-6 md:p-8"
     >
-      <div class="bg-[var(--color-ink)] p-6 md:p-7">
-        <p class="text-xs tracking-[0.12em] text-[var(--color-paper-faint)] uppercase">
-          {t('studio.leaveOutLabel')}
-        </p>
-        <ul class="mt-4 space-y-3">
-          {
-            leaveOut.map((item) => (
-              <li class="text-sm text-[var(--color-paper-faint)] line-through decoration-[var(--color-hairline-strong)]">
-                {item}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="bg-[var(--color-surface)] p-6 md:p-7">
-        <p class="text-xs tracking-[0.12em] text-[var(--color-brass)] uppercase">
-          {t('studio.keepLabel')}
-        </p>
-        <ul class="mt-4 space-y-3">
-          {keep.map((item) => <li class="text-sm text-[var(--color-paper)]">{item}</li>)}
-        </ul>
-      </div>
+      <p class="text-xs tracking-[0.12em] text-[var(--color-brass)] uppercase">
+        {t('studio.focusLabel')}
+      </p>
+      <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+        {
+          focus.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-[var(--color-paper)]">
+              <span
+                aria-hidden="true"
+                class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-brass)]"
+              />
+              {item}
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </section>

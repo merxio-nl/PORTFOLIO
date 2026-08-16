@@ -87,3 +87,13 @@ design decisions are recorded here.
   `src/i18n/ui.ts`). See `docs/DECISIONS.md` ADR-007.
 - Project order in the Work overview: ALLROUND4YOU, Apaxic Towing,
   RugFlag, Universal Plug.
+- Correction round #2 (polish pass, no architecture change) rewrote the
+  JOMO philosophy copy to be positive rather than a "what we leave out"
+  contrast (owner felt the original sounded sarcastic/mocking), repositioned
+  the Creator section (dropped repeated "founder-led"/"Founder" language;
+  Russian uses "Директор JOMO Studio" per owner preference, not
+  "Основатель"), did a full Russian editorial pass to remove literal-feeling
+  translations, removed the visible "prototype" footer line and the
+  default Astro favicon, and fixed minor accessibility gaps. Confirmed
+  public contact details (email, WhatsApp, Telegram, Tilburg location)
+  unchanged and correct.

@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# JOMO Studio — Portfolio V2
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Astro-based rebuild of the portfolio, alongside the current production
+site at the repository root. See `docs/PROJECT.md` and
+`docs/DECISIONS.md` (ADR-006, ADR-007) at the repo root for background
+and architecture rationale.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-/
-├── public/
+v2/
+├── public/               static assets, served as-is (images, favicon)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/       shared UI components
+│   │   └── views/        full-page views, parameterized by lang (en/ru)
+│   ├── content/projects/ project data, one folder per locale (en/, ru/)
+│   ├── i18n/              UI copy dictionary + locale helpers
+│   ├── layouts/           Base.astro (document shell, fonts)
+│   ├── pages/             EN routes (RU routes live under pages/ru/)
+│   └── styles/            global.css (design tokens, base styles)
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+All commands run from `v2/`:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Command             | Action                                      |
+| :------------------ | :------------------------------------------- |
+| `npm install`        | Install dependencies                         |
+| `npm run dev`         | Start local dev server at `localhost:4321`   |
+| `npm run build`       | Build the production site to `./dist/`       |
+| `npm run preview`     | Preview the build locally                    |
+| `npx astro check`     | Type-check the project                       |
 
-## 🧞 Commands
+## Adding a project
 
-All commands are run from the root of the project, from a terminal:
+Add matching `src/content/projects/en/<slug>.json` and
+`src/content/projects/ru/<slug>.json` entries (see `src/content.config.ts`
+for the schema). Narrative fields (`problem`/`solution`/`outcome`) are
+optional — leave them unset rather than inventing content for a project
+that doesn't have a full case study yet.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Adding UI copy
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Add the string to both the `en` and `ru` blocks in `src/i18n/ui.ts`, then
+reference it via `useTranslations(lang)`. Don't hardcode user-facing text
+into components.
