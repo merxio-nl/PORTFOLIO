@@ -34,12 +34,12 @@ const meta = {
 <Base title={meta[lang].title} description={meta[lang].description} lang={lang}>
   <Nav lang={lang} />
   <main>
-    <section class="pt-24 pb-10 md:pt-32 md:pb-12">
+    <section class="pt-20 pb-8 md:pt-28 md:pb-10">
       <div class="mx-auto max-w-6xl px-6 md:px-10">
         <p class="text-xs tracking-[0.16em] text-[var(--color-brass)] uppercase">
           {t('workIndex.eyebrow')}
         </p>
-        <h1 class="mt-3 max-w-xl font-display text-3xl font-semibold text-[var(--color-paper)] sm:text-4xl">
+        <h1 class="mt-3 max-w-xl font-display text-2xl font-semibold text-[var(--color-paper)] sm:text-3xl">
           {t('workIndex.heading')}
         </h1>
         <p class="mt-3 max-w-lg text-sm text-[var(--color-paper-muted)] md:text-base">
@@ -48,7 +48,7 @@ const meta = {
       </div>
     </section>
 
-    <section class="pb-20 md:pb-28">
+    <section class="pb-16 md:pb-20">
       <div class="mx-auto max-w-6xl px-6 md:px-10">
         <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {featured && (

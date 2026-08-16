@@ -9,24 +9,20 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="top" class="relative overflow-hidden pt-24 pb-14 md:pt-32 md:pb-16">
+<section id="top" class="relative overflow-hidden pt-20 pb-10 md:pt-28 md:pb-12">
   <div class="mx-auto max-w-6xl px-6 md:px-10">
-    <p data-reveal class="text-xs tracking-[0.16em] text-[var(--color-brass)] uppercase">
-      {t('hero.eyebrow')}
-    </p>
-
     <h1
       data-reveal
-      class="mt-5 max-w-2xl font-display text-4xl font-semibold leading-[1.15] text-[var(--color-paper)] sm:text-5xl md:text-[3.25rem]"
+      class="max-w-2xl font-display text-3xl font-semibold leading-[1.18] text-[var(--color-paper)] sm:text-4xl md:text-[2.75rem]"
     >
       {t('hero.heading')}
     </h1>
 
-    <p data-reveal class="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-paper-muted)] md:text-lg">
+    <p data-reveal class="mt-4 max-w-xl text-base leading-relaxed text-[var(--color-paper-muted)] md:text-lg">
       {t('hero.subhead')}
     </p>
 
-    <div data-reveal class="mt-8 flex flex-wrap items-center gap-4">
+    <div data-reveal class="mt-7 flex flex-wrap items-center gap-4">
       <a
         href={localizedPath('/#contact', lang)}
         class="rounded-full bg-[var(--color-paper)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-opacity duration-200 hover:opacity-90"
@@ -41,35 +37,5 @@ const t = useTranslations(lang);
         <span aria-hidden="true">→</span>
       </a>
     </div>
-
-    <dl
-      data-reveal
-      class="mt-12 grid grid-cols-1 gap-6 border-t border-[var(--color-hairline)] pt-6 sm:grid-cols-3"
-    >
-      <div>
-        <dt class="text-xs tracking-[0.12em] text-[var(--color-paper-faint)] uppercase">
-          {t('hero.metaApproachLabel')}
-        </dt>
-        <dd class="mt-1.5 text-sm text-[var(--color-paper-muted)]">
-          {t('hero.metaApproachValue')}
-        </dd>
-      </div>
-      <div>
-        <dt class="text-xs tracking-[0.12em] text-[var(--color-paper-faint)] uppercase">
-          {t('hero.metaLocationLabel')}
-        </dt>
-        <dd class="mt-1.5 text-sm text-[var(--color-paper-muted)]">
-          {t('hero.metaLocationValue')}
-        </dd>
-      </div>
-      <div>
-        <dt class="text-xs tracking-[0.12em] text-[var(--color-paper-faint)] uppercase">
-          {t('hero.metaWorkingLabel')}
-        </dt>
-        <dd class="mt-1.5 text-sm text-[var(--color-paper-muted)]">
-          {t('hero.metaWorkingValue')}
-        </dd>
-      </div>
-    </dl>
   </div>
 </section>

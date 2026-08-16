@@ -15,18 +15,11 @@ export const ui = {
     'nav.startProject': 'Start a project',
     'nav.langSwitch': 'Russian — Ru',
 
-    'hero.eyebrow': 'Web strategy · Design · Development',
-    'hero.heading': 'Good digital work contains what matters — nothing more.',
+    'hero.heading': 'Websites for businesses — from idea to launch.',
     'hero.subhead':
-      'JOMO designs and builds websites that are easy to understand at a glance — one person, start to finish.',
+      'JOMO handles structure, design, development and launch. You work directly with the person building your project.',
     'hero.ctaPrimary': 'Start a project',
     'hero.ctaSecondary': 'See the work',
-    'hero.metaApproachLabel': 'Approach',
-    'hero.metaApproachValue': 'Quiet confidence. Strong work. Clear communication.',
-    'hero.metaLocationLabel': 'Based in',
-    'hero.metaLocationValue': 'Tilburg, Netherlands',
-    'hero.metaWorkingLabel': 'Working with',
-    'hero.metaWorkingValue': 'Founders and owner-run businesses',
 
     'work.eyebrow': 'Selected work',
     'work.heading': 'Real projects for real businesses.',
@@ -60,9 +53,9 @@ export const ui = {
     'services.development.item3': 'Hosting & launch',
 
     'studio.eyebrow': 'JOMO',
-    'studio.heading': 'Joy of missing out, applied on purpose.',
+    'studio.heading': "Only what's actually needed.",
     'studio.body':
-      "For JOMO, restraint is a discipline, not a shortcut. We start with what a business and its customers actually need, design that carefully, and leave the rest out.",
+      "We don't add things for effect. Every section, feature and interaction solves a real problem — for the business or the person using the site.",
     'studio.focusLabel': 'What earns its place',
     'studio.focus1': 'The work itself, presented clearly',
     'studio.focus2': 'Words that help someone make a decision',
@@ -73,7 +66,7 @@ export const ui = {
     'creator.name': 'Yaroslav Redka',
     'creator.role': 'Creator & developer, JOMO Studio · Tilburg, Netherlands',
     'creator.bio':
-      'Yaroslav designs and builds every JOMO project personally, and stays the direct point of contact throughout. The studio is structured to grow — for now, one person handles the work and the conversation.',
+      'Yaroslav is personally responsible for the strategy, design and development of every JOMO project, and stays the direct point of contact throughout. The studio is built to grow — for now, one person handles the work and the conversation.',
 
     'process.eyebrow': 'Process',
     'process.heading': 'A short, clear path from first call to launch.',
@@ -118,23 +111,16 @@ export const ui = {
     'nav.work': 'Работы',
     'nav.services': 'Услуги',
     'nav.studio': 'Студия',
-    'nav.creator': 'Автор',
+    'nav.creator': 'Обо мне',
     'nav.contact': 'Контакты',
     'nav.startProject': 'Обсудить проект',
     'nav.langSwitch': 'English — En',
 
-    'hero.eyebrow': 'Веб-стратегия · Дизайн · Разработка',
-    'hero.heading': 'Хороший сайт — это только то, что действительно важно. Не больше.',
+    'hero.heading': 'Сайты для бизнеса — от идеи до запуска.',
     'hero.subhead':
-      'JOMO делает сайты, понятные с первого взгляда. Всей работой — от идеи до запуска — занимается один человек.',
+      'JOMO берёт на себя структуру, дизайн, разработку и запуск. Вы напрямую общаетесь с человеком, который делает ваш проект.',
     'hero.ctaPrimary': 'Обсудить проект',
     'hero.ctaSecondary': 'Смотреть работы',
-    'hero.metaApproachLabel': 'Подход',
-    'hero.metaApproachValue': 'Спокойная уверенность. Сильная работа. Понятная коммуникация.',
-    'hero.metaLocationLabel': 'Город',
-    'hero.metaLocationValue': 'Тилбург, Нидерланды',
-    'hero.metaWorkingLabel': 'Работаем с',
-    'hero.metaWorkingValue': 'Основателями и владельцами бизнеса',
 
     'work.eyebrow': 'Проекты',
     'work.heading': 'Реальные проекты для реального бизнеса.',
@@ -168,20 +154,20 @@ export const ui = {
     'services.development.item3': 'Хостинг и запуск',
 
     'studio.eyebrow': 'JOMO',
-    'studio.heading': 'Joy of missing out — осознанный выбор, а не случайность.',
+    'studio.heading': 'Только то, что действительно нужно.',
     'studio.body':
-      'Для JOMO сдержанность — это дисциплина, а не экономия. Сначала разбираемся, что действительно нужно бизнесу и его клиентам, продумываем это до деталей — и не добавляем ничего лишнего.',
+      'Мы не добавляем элементы ради эффекта. Каждый раздел, функция и взаимодействие решают конкретную задачу — бизнеса или пользователя.',
     'studio.focusLabel': 'На чём мы фокусируемся',
     'studio.focus1': 'Сама работа, показанная ясно',
     'studio.focus2': 'Слова, которые помогают принять решение',
     'studio.focus3': 'Прямой контакт с реальным человеком',
     'studio.focus4': 'Достаточно мастерства, чтобы вызывать доверие',
 
-    'creator.eyebrow': 'Автор',
+    'creator.eyebrow': 'Обо мне',
     'creator.name': 'Ярослав Редька',
     'creator.role': 'Директор JOMO Studio · Тилбург, Нидерланды',
     'creator.bio':
-      'Ярослав лично занимается дизайном и разработкой каждого проекта JOMO и всегда остаётся на прямой связи с клиентом. Студия создана с расчётом на рост — пока всей работой и общением занимается один человек.',
+      'Ярослав лично отвечает за стратегию, дизайн и разработку каждого проекта JOMO — и всегда на прямой связи с клиентом. Студия устроена так, чтобы расти дальше, но пока всю работу и общение ведёт один человек.',
 
     'process.eyebrow': 'Процесс',
     'process.heading': 'Короткий и понятный путь от звонка до запуска.',

@@ -97,3 +97,22 @@ design decisions are recorded here.
   default Astro favicon, and fixed minor accessibility gaps. Confirmed
   public contact details (email, WhatsApp, Telegram, Tilburg location)
   unchanged and correct.
+- Correction round #3 (UX compression + copy pass, no architecture change):
+  reordered the homepage to Hero → Services → Selected Work → Studio →
+  Creator → Process → Contact (Services and Work now appear in/near the
+  first viewport at 1440×900, versus much further down before); rewrote
+  the hero to be direct and commercial (dropped the eyebrow line and the
+  bottom metadata strip); fixed a real device-mockup bug (the mobile
+  frame used a percentage `border-radius`, which resolves to different
+  horizontal/vertical pixel values on a tall narrow box and produced
+  visibly stretched corners — replaced with a fixed-pixel nested-radius
+  bezel); reduced section padding/heading sizes throughout; did another
+  Russian editorial pass (nav "Автор" → "Обо мне", tightened Studio and
+  Services copy). Confirmed via `gh api repos/.../pages`: the live V1 site
+  is served GitHub Pages "legacy" build from `main`/root — so no safe way
+  exists to give V2 a public preview URL without either pushing to `main`
+  (not authorized this round) or changing that Pages source (an
+  architecture decision requiring owner approval, not made). Recommended
+  in the PR instead: connect a separate static host (e.g. Vercel/Netlify)
+  to this repo with root directory `v2/`, which needs zero changes to the
+  existing Pages config and gives automatic preview URLs per branch/PR.
