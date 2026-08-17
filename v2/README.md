@@ -59,3 +59,6 @@ JOMO Studio V2 deploys via Vercel, connected to this GitHub repository:
 
 This is separate from the V1 production site at the repository root,
 which continues to deploy through GitHub Pages.
+
+The Vercel Root Directory is confirmed set to `v2`, and preview
+deployments trigger automatically on every push to a feature branch.
