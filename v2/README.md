@@ -46,3 +46,16 @@ that doesn't have a full case study yet.
 Add the string to both the `en` and `ru` blocks in `src/i18n/ui.ts`, then
 reference it via `useTranslations(lang)`. Don't hardcode user-facing text
 into components.
+
+## Deployment
+
+JOMO Studio V2 deploys via Vercel, connected to this GitHub repository:
+
+- **Source repository:** GitHub (this repo)
+- **Root Directory:** `v2`
+- **Production branch:** `main`
+- **Preview deployments:** automatic, for feature branches and pull
+  requests
+
+This is separate from the V1 production site at the repository root,
+which continues to deploy through GitHub Pages.
