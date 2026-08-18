@@ -11,11 +11,12 @@
   /* Warm off-white foreground — never pure white. */
   --color-paper: #f4f2ed;
   --color-paper-muted: #a8a9ad;
-  --color-paper-faint: #6b6d72;
+  /* Lightened from #6b6d72 to meet WCAG AA (4.5:1) at the small/eyebrow
+     sizes it's actually used at — the original was 3.65:1 on --color-ink. */
+  --color-paper-faint: #7b7e84;
 
   /* Single controlled accent: warm brass/gold, used sparingly. */
   --color-brass: #c9a15a;
-  --color-brass-soft: #8a7454;
 
   /*
    * Contemporary, restrained system — no ornate/classical serif identity.

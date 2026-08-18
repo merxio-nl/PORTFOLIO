@@ -40,10 +40,10 @@
     { "src": "/images/projects/allround4you/gallery/work-22.webp", "alt": "Укладка новой террасы у садовой пристройки: серая плитка с одним декоративным акцентом" }
   ],
   "siteShowcase": [
-    { "src": "/images/projects/allround4you/site/desktop.png", "alt": "Скриншот главной страницы ALLROUND4YOU на десктопе: заголовок, кнопки звонка и WhatsApp, три бейджа доверия на фоне фото проекта" }
+    { "src": "/images/projects/allround4you/site/desktop.webp", "alt": "Скриншот главной страницы ALLROUND4YOU на десктопе: заголовок, кнопки звонка и WhatsApp, три бейджа доверия на фоне фото проекта" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/allround4you/site/mobile-hero.png", "alt": "Мобильный скриншот главного экрана ALLROUND4YOU с заголовком и кнопками WhatsApp и звонка на всю ширину" },
-    { "src": "/images/projects/allround4you/site/mobile-about.png", "alt": "Мобильный скриншот раздела «О компании» и услуг ALLROUND4YOU" }
+    { "src": "/images/projects/allround4you/site/mobile-hero.webp", "alt": "Мобильный скриншот главного экрана ALLROUND4YOU с заголовком и кнопками WhatsApp и звонка на всю ширину" },
+    { "src": "/images/projects/allround4you/site/mobile-about.webp", "alt": "Мобильный скриншот раздела «О компании» и услуг ALLROUND4YOU" }
   ]
 }

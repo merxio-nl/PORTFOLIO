@@ -1,5 +1,5 @@
 ---
-import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+import { useTranslations, localizedPath, alternateLangPath, type Lang } from '../i18n/utils';
 import { languages } from '../i18n/ui';
 
 interface Props {
@@ -17,13 +17,12 @@ const links = [
   { href: localizedPath('/#contact', lang), label: t('nav.contact') },
 ];
 
-// All three locale trees mirror each other 1:1, so stripping any existing
-// /ru or /nl prefix and re-adding the target locale's prefix maps the
-// current page to its counterpart in another language.
+// All locale trees mirror each other 1:1, so stripping any existing locale
+// prefix and re-adding the target locale's prefix maps the current page to
+// its counterpart in another language.
 const currentPath = Astro.url.pathname;
 function pathForLang(targetLang: Lang): string {
-  const stripped = currentPath.replace(/^\/(ru|nl)(?=\/|$)/, '') || '/';
-  return localizedPath(stripped, targetLang);
+  return alternateLangPath(currentPath, targetLang);
 }
 const langCodes = Object.keys(languages) as Lang[];
 ---
@@ -133,6 +132,13 @@ const langCodes = Object.keys(languages) as Lang[];
   const bar1 = document.getElementById('nav-bar-1');
   const bar2 = document.getElementById('nav-bar-2');
 
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+    bar1?.classList.remove('rotate-45', 'translate-y-[3px]');
+    bar2?.classList.remove('opacity-0');
+  }
+
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.toggle('hidden') === false;
     toggle.setAttribute('aria-expanded', String(isOpen));
@@ -141,12 +147,16 @@ const langCodes = Object.keys(languages) as Lang[];
     bar2?.classList.toggle('opacity-0', isOpen);
   });
 
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
   menu?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      toggle?.setAttribute('aria-expanded', 'false');
-      bar1?.classList.remove('rotate-45', 'translate-y-[3px]');
-      bar2?.classList.remove('opacity-0');
+      closeMenu();
     });
   });
 </script>

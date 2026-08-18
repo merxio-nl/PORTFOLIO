@@ -240,3 +240,83 @@ rather than by shortening any language's copy.
 `src/i18n/ui.ts` dictionary block, `src/content/projects/<lang>/*.json`
 set, and `src/pages/<lang>/...` route tree — the switcher and
 `pathForLang` prefix-stripping logic in `Nav.astro` need no changes.
+
+---
+
+## ADR-010: Production readiness audit — Wave 1 (SEO, sitemap/robots, safe technical fixes)
+
+**Date:** 2026-08-19
+**Status:** Accepted
+
+A technical production-readiness pass added the SEO/metadata foundation
+that was entirely missing (no canonical, no Open Graph, no hreflang, no
+sitemap, no robots.txt), plus a handful of low-risk, objective fixes
+found during the audit. No copy, layout, or brand direction changed.
+
+1. **`site` is derived from Vercel's own build-time env vars, never a
+   guessed domain.** `astro.config.mjs` now sets `site` to
+   `VERCEL_PROJECT_PRODUCTION_URL` (falls back to `VERCEL_URL`, then
+   `localhost:4321`). No production domain is attached to this project
+   yet — it's Preview-only — so this resolves correctly today and will
+   resolve correctly with zero code changes once a real domain is
+   attached. `Astro.site` drives canonical URLs, hreflang alternates,
+   Open Graph `url`, and the sitemap.
+2. **hreflang/canonical implementation.** `Base.astro` now emits a
+   canonical link, `hreflang` alternates for all three locales plus
+   `x-default` (pointing at the English/default version), Open Graph
+   (title/description/url/locale + locale:alternate/site_name/type), and
+   a `summary` Twitter Card (no image yet — see below). The prefix-strip
+   logic this needs was factored out of `Nav.astro` into
+   `alternateLangPath`/`stripLangPrefix` in `src/i18n/utils.ts`, shared
+   by both.
+3. **Every non-production build is `noindex`.** Since no real domain
+   exists yet, indexing a Vercel Preview URL would be actively harmful
+   (transient URLs, duplicate-content risk once a real domain ships).
+   `Base.astro` emits `<meta name="robots" content="noindex, nofollow">`
+   whenever `process.env.VERCEL_ENV !== 'production'` — true for local
+   builds and every Preview deploy today. `robots.txt` (see below) uses
+   the same signal. The day this branch is merged and Vercel promotes an
+   actual Production deployment, both flip to indexable with no code
+   change.
+4. **Sitemap and robots.txt are hand-rolled endpoints, not the
+   `@astrojs/sitemap` integration.** `src/pages/sitemap.xml.ts` and
+   `robots.txt.ts` are small `APIRoute` handlers rather than a new
+   dependency — the route list is already fully enumerable from the same
+   `getCollection('projects')` every page uses, so a new project
+   automatically appears in the sitemap with zero maintenance (same
+   extensibility guarantee as ADR-004), and the alternative would add a
+   dependency for something ~30 lines already cover correctly.
+5. **Safe fixes made during the audit** (each independently low-risk,
+   see the PR description for detail): `--color-paper-faint` was
+   3.65:1 on `--color-ink` at the small/eyebrow sizes it's actually used
+   at — below WCAG AA's 4.5:1 for normal text — lightened to `#7b7e84`
+   (4.65:1), same hue, not a redesign; the unused `--color-brass-soft`
+   token was removed; `favicon.svg` still referenced the pre-ADR-008
+   `Manrope` font (silently falling back to a generic sans-serif) and
+   now references `Golos Text`; PNG favicon/apple-touch-icon rasters
+   were generated from that corrected SVG; the Google Fonts stylesheet
+   was made non-render-blocking (preload + media-swap pattern), which
+   measured ~800ms of blocking time via Lighthouse; oversized PNG
+   screenshots (up to 1.4MB) were converted to WebP at quality 85
+   (85–93% smaller, visually equivalent) with all three locales'
+   content files updated to match; a handful of already-orphaned gallery
+   images (referenced nowhere) were deleted; a single shared `404.astro`
+   was added (one static 404 works for any locale prefix — most static
+   hosts, Vercel included, serve one `404.html` site-wide, so per-locale
+   404s would need custom host routing config for no real benefit).
+
+**Why:** These are exactly the class of fix the owner scoped as
+in-bounds for an audit pass — "fix objective problems when the solution
+is clear and low-risk," not subjective design changes.
+
+**Deferred, needs an owner-provided asset — not a code gap:** there is no
+Open Graph share image. `Base.astro` does not emit `og:image` at all
+(better than pointing at a non-existent file). Recommended spec: 1200×630
+PNG/JPG, JOMO wordmark + tagline, works in both light and dark link-
+preview UIs. Once provided, wiring it into `Base.astro` is a one-line
+addition (an `image` prop already fits the existing pattern).
+
+**How to apply:** New pages automatically get correct canonical/hreflang
+metadata through `Base.astro` — no per-page work needed. New projects
+automatically appear in the sitemap through the existing content
+collection — no sitemap work needed.

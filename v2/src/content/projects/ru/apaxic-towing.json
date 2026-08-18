@@ -11,15 +11,15 @@
   "liveUrl": "https://apaxictowing.com",
   "tags": ["Лендинг", "Клиентский проект", "Эвакуация и помощь на дороге", "США"],
 
-  "coverImage": "/images/projects/apaxic-towing/site/desktop.png",
+  "coverImage": "/images/projects/apaxic-towing/site/desktop.webp",
   "coverImageAlt": "Главный экран Apaxic Towing: эвакуатор ночью, заголовок «Fast & Reliable Towing Service» и кнопки звонка и WhatsApp",
 
   "outcome": "После запуска сайт начали использовать вместе с рекламой в поисковых сервисах. Люди находят компанию через поиск, переходят на сайт и связываются с владельцем. Часть таких обращений превращается в оплаченные заказы на эвакуацию.",
 
   "siteShowcase": [
-    { "src": "/images/projects/apaxic-towing/site/desktop.png", "alt": "Скриншот главной страницы Apaxic Towing на десктопе с зоной обслуживания и кнопками звонка и WhatsApp" }
+    { "src": "/images/projects/apaxic-towing/site/desktop.webp", "alt": "Скриншот главной страницы Apaxic Towing на десктопе с зоной обслуживания и кнопками звонка и WhatsApp" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/apaxic-towing/site/mobile.png", "alt": "Мобильный скриншот главного экрана Apaxic Towing" }
+    { "src": "/images/projects/apaxic-towing/site/mobile.webp", "alt": "Мобильный скриншот главного экрана Apaxic Towing" }
   ]
 }

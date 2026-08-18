@@ -132,3 +132,20 @@ design decisions are recorded here.
   required moving the desktop-nav breakpoint from `md` (768px) to `lg`
   (1024px) to avoid header crowding at tablet widths — the tablet range
   now uses the existing hamburger menu. See `docs/DECISIONS.md` ADR-009.
+- Production readiness audit, Wave 1 (technical only — no copy/layout
+  change): added the SEO/metadata foundation that didn't exist yet
+  (canonical, hreflang, Open Graph, Twitter Card, sitemap.xml, robots.txt
+  — every non-production build is `noindex` since no domain is attached
+  yet), plus safe fixes found during the audit: a real WCAG AA contrast
+  failure in `--color-paper-faint` (3.65:1 → 4.65:1, same hue), a stale
+  `Manrope` reference in `favicon.svg` left over from ADR-008 (plus
+  generated PNG/apple-touch-icon rasters), a render-blocking Google Fonts
+  stylesheet (~800ms per Lighthouse, now preloaded + swapped), oversized
+  PNG screenshots converted to WebP (85–93% smaller), a few already-
+  orphaned gallery images removed, and a shared `404.astro`. Full
+  Lighthouse (Chromium): Performance 96, Accessibility 100, Best
+  Practices 100, SEO 69 (the only deduction is the intentional
+  `noindex`, which is correct for a domain-less Preview deployment).
+  Deferred, needs an owner asset: no Open Graph share image exists yet
+  (spec and one-line wiring documented, not invented). See
+  `docs/DECISIONS.md` ADR-010.

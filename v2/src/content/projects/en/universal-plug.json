@@ -12,19 +12,19 @@
   "repoUrl": "https://github.com/merxio-nl/universal-plug",
   "tags": ["Smoking accessories", "Product catalog", "Telegram ordering", "NL/EU delivery"],
 
-  "coverImage": "/images/projects/universal-plug/site/desktop.png",
+  "coverImage": "/images/projects/universal-plug/site/desktop.webp",
   "coverImageAlt": "Universal Plug product site showing a heat-resistant bottle-hookah cap in green and blue color options",
 
   "outcome": "Some traffic comes from QR codes on printed cards, tracked with UTM parameters. The site carries a visitor from first seeing the product to reaching out to place an order.",
 
   "siteShowcase": [
-    { "src": "/images/projects/universal-plug/site/desktop.png", "alt": "Desktop screenshot of the Universal Plug product page, with the product photo, features and ordering buttons" }
+    { "src": "/images/projects/universal-plug/site/desktop.webp", "alt": "Desktop screenshot of the Universal Plug product page, with the product photo, features and ordering buttons" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/universal-plug/site/mobile.png", "alt": "Mobile screenshot of the Universal Plug product page" }
+    { "src": "/images/projects/universal-plug/site/mobile.webp", "alt": "Mobile screenshot of the Universal Plug product page" }
   ],
   "workGallery": [
-    { "src": "/images/projects/universal-plug/product-main.png", "alt": "Product photo of the Universal Plug cap in green and blue, shown at an angle with its metal mesh insert visible" },
-    { "src": "/images/projects/universal-plug/product-top.jpg", "alt": "Top-down product photo of the Universal Plug cap in blue, showing the perforated metal insert" }
+    { "src": "/images/projects/universal-plug/product-main.webp", "alt": "Product photo of the Universal Plug cap in green and blue, shown at an angle with its metal mesh insert visible" },
+    { "src": "/images/projects/universal-plug/product-top.webp", "alt": "Top-down product photo of the Universal Plug cap in blue, showing the perforated metal insert" }
   ]
 }

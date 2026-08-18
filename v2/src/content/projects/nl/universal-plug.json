@@ -12,19 +12,19 @@
   "repoUrl": "https://github.com/merxio-nl/universal-plug",
   "tags": ["Rookaccessoires", "Productcatalogus", "Bestellen via Telegram", "Verzending NL/EU"],
 
-  "coverImage": "/images/projects/universal-plug/site/desktop.png",
+  "coverImage": "/images/projects/universal-plug/site/desktop.webp",
   "coverImageAlt": "Productpagina van Universal Plug met een hittebestendige dop voor flessenwaterpijpen in groen en blauw",
 
   "outcome": "Een deel van het verkeer komt binnen via QR-codes op gedrukte kaartjes, gevolgd met UTM-parameters. De site begeleidt een bezoeker van de eerste kennismaking met het product tot het contact voor een bestelling.",
 
   "siteShowcase": [
-    { "src": "/images/projects/universal-plug/site/desktop.png", "alt": "Desktopscreenshot van de Universal Plug-productpagina, met productfoto, kenmerken en bestelknoppen" }
+    { "src": "/images/projects/universal-plug/site/desktop.webp", "alt": "Desktopscreenshot van de Universal Plug-productpagina, met productfoto, kenmerken en bestelknoppen" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/universal-plug/site/mobile.png", "alt": "Mobiel screenshot van de Universal Plug-productpagina" }
+    { "src": "/images/projects/universal-plug/site/mobile.webp", "alt": "Mobiel screenshot van de Universal Plug-productpagina" }
   ],
   "workGallery": [
-    { "src": "/images/projects/universal-plug/product-main.png", "alt": "Productfoto van de Universal Plug-dop in groen en blauw, schuin gefotografeerd met het metalen gaas zichtbaar" },
-    { "src": "/images/projects/universal-plug/product-top.jpg", "alt": "Productfoto van boven van de Universal Plug-dop in blauw, met het geperforeerde metalen inzetstuk zichtbaar" }
+    { "src": "/images/projects/universal-plug/product-main.webp", "alt": "Productfoto van de Universal Plug-dop in groen en blauw, schuin gefotografeerd met het metalen gaas zichtbaar" },
+    { "src": "/images/projects/universal-plug/product-top.webp", "alt": "Productfoto van boven van de Universal Plug-dop in blauw, met het geperforeerde metalen inzetstuk zichtbaar" }
   ]
 }

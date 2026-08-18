@@ -12,19 +12,19 @@
   "repoUrl": "https://github.com/merxio-nl/universal-plug",
   "tags": ["Аксессуары для курения", "Каталог товаров", "Заказ в Telegram", "Доставка NL/EU"],
 
-  "coverImage": "/images/projects/universal-plug/site/desktop.png",
+  "coverImage": "/images/projects/universal-plug/site/desktop.webp",
   "coverImageAlt": "Сайт Universal Plug с термостойким колпаком для бутылочных кальянов в зелёном и синем цвете",
 
   "outcome": "На сайт ведут в том числе QR-ссылки с печатных материалов, для которых используются UTM-метки. Сам сайт помогает довести человека от знакомства с продуктом до связи для оформления заказа.",
 
   "siteShowcase": [
-    { "src": "/images/projects/universal-plug/site/desktop.png", "alt": "Скриншот страницы товара Universal Plug на десктопе с фото товара, характеристиками и кнопками заказа" }
+    { "src": "/images/projects/universal-plug/site/desktop.webp", "alt": "Скриншот страницы товара Universal Plug на десктопе с фото товара, характеристиками и кнопками заказа" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/universal-plug/site/mobile.png", "alt": "Мобильный скриншот страницы товара Universal Plug" }
+    { "src": "/images/projects/universal-plug/site/mobile.webp", "alt": "Мобильный скриншот страницы товара Universal Plug" }
   ],
   "workGallery": [
-    { "src": "/images/projects/universal-plug/product-main.png", "alt": "Товарное фото колпака Universal Plug в зелёном и синем цвете, видна металлическая сетка" },
-    { "src": "/images/projects/universal-plug/product-top.jpg", "alt": "Колпак Universal Plug в синем цвете сверху, видна перфорированная металлическая вставка" }
+    { "src": "/images/projects/universal-plug/product-main.webp", "alt": "Товарное фото колпака Universal Plug в зелёном и синем цвете, видна металлическая сетка" },
+    { "src": "/images/projects/universal-plug/product-top.webp", "alt": "Колпак Universal Plug в синем цвете сверху, видна перфорированная металлическая вставка" }
   ]
 }

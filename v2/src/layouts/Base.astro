@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import type { Lang } from '../i18n/utils';
+import { languages, defaultLang } from '../i18n/ui';
+import { alternateLangPath, type Lang } from '../i18n/utils';
 
 interface Props {
   title: string;
@@ -9,6 +10,29 @@ interface Props {
 }
 
 const { title, description, lang = 'en' } = Astro.props;
+
+const ogLocales: Record<Lang, string> = {
+  en: 'en_GB',
+  ru: 'ru_RU',
+  nl: 'nl_NL',
+};
+const langCodes = Object.keys(languages) as Lang[];
+
+// Astro.site is derived from real deployment data (Vercel's own env vars —
+// see astro.config.mjs), never a guessed domain, so these URLs are correct
+// on preview and production alike.
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateURLs = langCodes.map((code) => ({
+  lang: code,
+  url: new URL(alternateLangPath(Astro.url.pathname, code), Astro.site).toString(),
+}));
+const defaultURL = new URL(alternateLangPath(Astro.url.pathname, defaultLang), Astro.site).toString();
+
+// No production domain is attached yet, so every non-production build
+// (local dev/build and every Vercel Preview) is marked noindex. Once this
+// branch is merged and Vercel promotes an actual Production deployment,
+// VERCEL_ENV flips to "production" with no code change needed here.
+const isProduction = process.env.VERCEL_ENV === 'production';
 ---
 
 <!doctype html>
@@ -16,16 +40,68 @@ const { title, description, lang = 'en' } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0f1113" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {
+      alternateURLs.map(({ lang: altLang, url }) => (
+        <link rel="alternate" hreflang={altLang} href={url} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={defaultURL} />
+    {!isProduction && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:site_name" content="JOMO Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={ogLocales[lang]} />
+    {
+      langCodes
+        .filter((code) => code !== lang)
+        .map((code) => <meta property="og:locale:alternate" content={ogLocales[code]} />)
+    }
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {
+      /*
+        Loaded non-render-blocking (measured ~800ms of blocking time via
+        Lighthouse otherwise): preload the stylesheet, then swap its media
+        to "all" once loaded so it applies without holding up first paint.
+        font-display: swap (in the URL) already prevents invisible text in
+        the meantime. <noscript> covers the no-JS case.
+      */
+    }
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media='all';"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <slot />

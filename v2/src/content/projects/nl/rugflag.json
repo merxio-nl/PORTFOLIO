@@ -12,13 +12,13 @@
   "repoUrl": "https://github.com/merxio-nl/RugFlagFixed",
   "tags": ["HTML/CSS/JS", "Meertaligheid", "GitHub Pages"],
 
-  "coverImage": "/images/projects/rugflag/site/desktop.png",
+  "coverImage": "/images/projects/rugflag/site/desktop.webp",
   "coverImageAlt": "RugFlag-homepage met een close-up foto van kleurrijke handgemaakte getufte vloerkleden met cartoon- en pop-cultuurmotieven",
 
   "siteShowcase": [
-    { "src": "/images/projects/rugflag/site/desktop.png", "alt": "Desktopscreenshot van de RugFlag-homepage met handgemaakte getufte vloerkleden en de sitenavigatie" }
+    { "src": "/images/projects/rugflag/site/desktop.webp", "alt": "Desktopscreenshot van de RugFlag-homepage met handgemaakte getufte vloerkleden en de sitenavigatie" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/rugflag/site/mobile.png", "alt": "Mobiel screenshot van de RugFlag-homepage" }
+    { "src": "/images/projects/rugflag/site/mobile.webp", "alt": "Mobiel screenshot van de RugFlag-homepage" }
   ]
 }

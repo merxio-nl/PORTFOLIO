@@ -11,15 +11,15 @@
   "liveUrl": "https://apaxictowing.com",
   "tags": ["Landing page", "Client project", "Towing & roadside", "US"],
 
-  "coverImage": "/images/projects/apaxic-towing/site/desktop.png",
+  "coverImage": "/images/projects/apaxic-towing/site/desktop.webp",
   "coverImageAlt": "Apaxic Towing homepage hero: a tow truck at night with the headline 'Fast & Reliable Towing Service' and call/WhatsApp buttons",
 
   "outcome": "After launch, the site started running alongside search advertising. People find the company through search, land on the site, and contact the owner directly. Some of those enquiries turn into paid towing jobs.",
 
   "siteShowcase": [
-    { "src": "/images/projects/apaxic-towing/site/desktop.png", "alt": "Desktop screenshot of the Apaxic Towing homepage hero, with service area details and call/WhatsApp buttons" }
+    { "src": "/images/projects/apaxic-towing/site/desktop.webp", "alt": "Desktop screenshot of the Apaxic Towing homepage hero, with service area details and call/WhatsApp buttons" }
   ],
   "siteShowcaseMobile": [
-    { "src": "/images/projects/apaxic-towing/site/mobile.png", "alt": "Mobile screenshot of the Apaxic Towing homepage hero, stacked full-width" }
+    { "src": "/images/projects/apaxic-towing/site/mobile.webp", "alt": "Mobile screenshot of the Apaxic Towing homepage hero, stacked full-width" }
   ]
 }
