@@ -13,22 +13,22 @@ const t = useTranslations(lang);
   <div class="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
     <div class="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
       <div class="max-w-sm">
-        <p class="font-display text-xl font-semibold text-[var(--color-paper)]">
+        <p class="text-h3 font-display text-[var(--color-paper)]">
           JOMO<span class="text-[var(--color-brass)]">.</span>
         </p>
-        <p class="mt-3 text-sm leading-relaxed text-[var(--color-paper-muted)]">
+        <p class="mt-3 text-small text-[var(--color-paper-muted)]">
           {t('footer.tagline')}
         </p>
-        <p class="mt-1 text-sm text-[var(--color-paper-faint)]">
+        <p class="mt-1 text-small text-[var(--color-paper-faint)]">
           {t('footer.location')}
         </p>
       </div>
 
       <div>
-        <p class="text-xs tracking-[0.14em] text-[var(--color-paper-faint)] uppercase">
+        <p class="text-eyebrow text-[var(--color-paper-faint)] uppercase">
           {t('footer.navigate')}
         </p>
-        <ul class="mt-3 space-y-2 text-sm">
+        <ul class="mt-3 space-y-2 text-nav">
           <li><a href={localizedPath('/#work', lang)} class="footer-link">{t('nav.work')}</a></li>
           <li><a href={localizedPath('/#services', lang)} class="footer-link">{t('nav.services')}</a></li>
           <li><a href={localizedPath('/#studio', lang)} class="footer-link">{t('nav.studio')}</a></li>
@@ -37,10 +37,10 @@ const t = useTranslations(lang);
       </div>
 
       <div>
-        <p class="text-xs tracking-[0.14em] text-[var(--color-paper-faint)] uppercase">
+        <p class="text-eyebrow text-[var(--color-paper-faint)] uppercase">
           {t('footer.contact')}
         </p>
-        <ul class="mt-3 space-y-2 text-sm">
+        <ul class="mt-3 space-y-2 text-nav">
           <li>
             <a href="mailto:redyamusic@outlook.com" class="footer-link"
               >redyamusic@outlook.com</a
@@ -68,7 +68,7 @@ const t = useTranslations(lang);
     </div>
 
     <div
-      class="mt-10 border-t border-[var(--color-hairline)] pt-5 text-xs text-[var(--color-paper-faint)]"
+      class="mt-10 border-t border-[var(--color-hairline)] pt-5 text-small text-[var(--color-paper-faint)]"
     >
       <p>{t('footer.copyright')}</p>
     </div>

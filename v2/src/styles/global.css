@@ -19,13 +19,81 @@
 
   /*
    * Contemporary, restrained system — no ornate/classical serif identity.
-   * Manrope carries headings (a calm geometric sans with enough character
-   * for hierarchy); Inter carries body/UI copy for maximum readability.
+   * Golos Text carries headings: a grotesque with more editorial character
+   * than the previous Manrope (which reads as generic SaaS at this point)
+   * and confirmed full Cyrillic support. Inter stays for body/UI copy,
+   * where neutrality and legibility matter more than personality.
    */
-  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --ease-jomo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /*
+   * Typography system — a small, deliberate set of reusable roles instead
+   * of ad hoc size/weight/line-height combinations per component. Pair
+   * with `font-display` for the heading roles (Display/H1/H2/H3); the
+   * rest inherit Inter from `body` by default. See docs/DECISIONS.md for
+   * the rationale and full role list.
+   */
+
+  /* Display — reserved for the few highest-emphasis statements on the
+     site (the hero line, the JOMO manifesto). Dense and confident rather
+     than simply large: heavier weight, tighter tracking and line-height
+     than H1. Not used for routine section headings. */
+  --text-display: clamp(1.875rem, 1.5rem + 2vw, 2.75rem);
+  --text-display--line-height: 1.12;
+  --text-display--letter-spacing: -0.015em;
+  --text-display--font-weight: 700;
+
+  /* H1 — page-level titles (case-study title, Work index title). */
+  --text-h1: clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem);
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.008em;
+  --text-h1--font-weight: 600;
+
+  /* H2 — section headings (Services, Work, Studio, Creator, Process,
+     Contact). */
+  --text-h2: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
+  --text-h2--line-height: 1.25;
+  --text-h2--letter-spacing: -0.005em;
+  --text-h2--font-weight: 600;
+
+  /* H3 / card title — project titles, service names, case-study labels,
+     the creator's name, process step names. */
+  --text-h3: 1.125rem;
+  --text-h3--line-height: 1.4;
+  --text-h3--font-weight: 600;
+
+  /* Lead — the one supporting line directly under a heading (hero
+     subhead, section intros). */
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.6;
+  --text-lead--font-weight: 400;
+
+  /* Body — running copy: case-study narrative, creator bio, process
+     detail, service summaries. */
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-body--font-weight: 400;
+
+  /* Small — metadata: facts, tags, footer copy, de-emphasized notes. */
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-small--font-weight: 400;
+
+  /* Eyebrow — uppercase section kickers and labels. Pair with
+     `uppercase`. */
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--font-weight: 500;
+
+  /* Nav — nav links, buttons, CTAs: slightly heavier than body text so
+     interactive elements read as interactive. */
+  --text-nav: 0.875rem;
+  --text-nav--line-height: 1.4;
+  --text-nav--font-weight: 500;
 }
 
 @layer base {

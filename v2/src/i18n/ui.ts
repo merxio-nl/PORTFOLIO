@@ -62,7 +62,6 @@ export const ui = {
     'studio.p3': 'So I start with a different question: what does this project actually need?',
     'studio.p4':
       "Sometimes that's a simple, few-page site. Sometimes it needs something considerably more complex. What matters is that every decision makes sense, and the finished site is easy to use.",
-    'studio.closing': 'Less clutter. More attention to what actually matters.',
 
     'creator.eyebrow': 'Creator',
     'creator.heading': "Who's behind JOMO",
@@ -168,14 +167,13 @@ export const ui = {
     'services.development.item3': 'Домен и хостинг',
 
     'studio.eyebrow': 'JOMO',
-    'studio.heading': 'Только то, что действительно нужно.',
+    'studio.heading': 'Мы не плодим сущности. Форма следует за содержанием.',
     'studio.p1': 'JOMO для меня не просто название студии. Это подход к работе.',
     'studio.p2':
       'В сайт можно добавить почти бесконечное количество всего: анимации, страницы, функции, эффекты. Но больше не всегда значит лучше.',
     'studio.p3': 'Поэтому я начинаю с другого вопроса: что действительно нужно этому проекту?',
     'studio.p4':
       'Иногда ответом будет простой сайт из нескольких страниц. Иногда проекту понадобится что-то значительно сложнее. Главное, чтобы каждое решение имело смысл, а готовым сайтом было удобно пользоваться.',
-    'studio.closing': 'Меньше лишнего. Больше внимания к тому, что действительно важно.',
 
     'creator.eyebrow': 'О создателе',
     'creator.heading': 'Кто стоит за JOMO',

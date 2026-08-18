@@ -147,3 +147,42 @@ directly rather than being a speculative redesign.
 translation hasn't been reviewed yet — see the project's own commit/PR
 notes for what still needs owner/ChatGPT copy review). New UI strings go
 through `ui.ts`, not hardcoded into components.
+
+## ADR-008: V2 typography refinement — Golos Text display font + role-based type system
+
+**Date:** 2026-08-18
+**Status:** Accepted
+
+Following an owner review flagging inconsistent, ad hoc font sizing
+(especially in the Creator and Studio sections, where several unrelated
+sizes/weights sat next to each other) and a request for a more editorial,
+less generic-SaaS display font, two changes were made:
+
+1. **Display font swap.** Manrope (adopted in ADR-007) was replaced with
+   Golos Text for all heading/display roles. Three candidates — Manrope,
+   Onest, Golos Text — were compared directly: each was verified for full
+   Cyrillic (`cyrillic` + `cyrillic-ext`) coverage via the live Google
+   Fonts API response, then rendered side by side using the real Russian
+   manifesto copy at production weight/size. Manrope read as generic SaaS
+   at this point in the project; Onest read as too neutral/UI-like to
+   carry a manifesto statement. Golos Text has more editorial character
+   while staying restrained. Inter is unchanged for body/UI copy.
+2. **Role-based typography system.** Nine reusable Tailwind v4 theme
+   tokens were added in `v2/src/styles/global.css`
+   (`--text-display`, `-h1`, `-h2`, `-h3`, `-lead`, `-body`, `-small`,
+   `-eyebrow`, `-nav`, each with paired line-height/letter-spacing/weight),
+   replacing one-off arbitrary sizes (`text-xl font-semibold`,
+   `text-xs tracking-[0.12em]`, etc.) across every component. Display is
+   reserved for exactly two places — the hero statement and the JOMO
+   manifesto line — so it keeps its impact rather than becoming a generic
+   "big text" utility.
+
+**Why:** The owner does not want the site redesigned, only made
+typographically coherent: one recognizable system instead of many
+individually styled components, with a clear label → heading → supporting
+info → body hierarchy everywhere text appears.
+
+**How to apply:** New components should use the existing role classes
+(`text-{role} font-display` for heading roles) instead of arbitrary
+Tailwind text utilities. Reserve `text-display` for statement-level
+copy only — it is not a generic "make it bigger" option.
