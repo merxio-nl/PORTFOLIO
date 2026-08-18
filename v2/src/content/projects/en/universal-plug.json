@@ -1,19 +1,21 @@
 {
   "title": "Universal Plug",
   "category": "Smoking accessories · Netherlands",
-  "tagline": "A product site for a heat-resistant bottle-hookah cap, with color options and Telegram/WhatsApp ordering.",
+  "tagline": "A small site for a Dutch smoking-accessories brand.",
   "featured": false,
   "order": 4,
-  "summary": "A small Netherlands-based business selling a heat-resistant cap accessory for DIY bottle hookahs. Product site with color variants, UTM/QR-tracked links, and ordering through Telegram.",
+  "summary": "It started as a small experiment and became an actual sales channel. The site lets you look at the product, pick a variant, and move to ordering through messaging.",
 
   "location": "Netherlands (ships to EU)",
 
   "liveUrl": "https://merxio-nl.github.io/universal-plug",
   "repoUrl": "https://github.com/merxio-nl/universal-plug",
-  "tags": ["Smoking accessories", "E-commerce", "Telegram ordering", "NL/EU delivery"],
+  "tags": ["Smoking accessories", "Product catalog", "Telegram ordering", "NL/EU delivery"],
 
   "coverImage": "/images/projects/universal-plug/site/desktop.png",
   "coverImageAlt": "Universal Plug product site showing a heat-resistant bottle-hookah cap in green and blue color options",
+
+  "outcome": "Some traffic comes from QR codes on printed cards, tracked with UTM parameters. The site carries a visitor from first seeing the product to reaching out to place an order.",
 
   "siteShowcase": [
     { "src": "/images/projects/universal-plug/site/desktop.png", "alt": "Desktop screenshot of the Universal Plug product page, with the product photo, features and ordering buttons" }

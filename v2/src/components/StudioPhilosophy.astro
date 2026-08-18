@@ -8,7 +8,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const focus = [t('studio.focus1'), t('studio.focus2'), t('studio.focus3'), t('studio.focus4')];
+const paragraphs = [t('studio.p1'), t('studio.p2'), t('studio.p3'), t('studio.p4')];
 ---
 
 <section id="studio" class="border-t border-[var(--color-hairline)] py-12 md:py-16">
@@ -20,31 +20,18 @@ const focus = [t('studio.focus1'), t('studio.focus2'), t('studio.focus3'), t('st
       <h2 class="mt-2 font-display text-2xl font-semibold leading-[1.2] text-[var(--color-paper)] sm:text-3xl">
         {t('studio.heading')}
       </h2>
-      <p class="mt-4 text-sm leading-relaxed text-[var(--color-paper-muted)] md:text-base">
-        {t('studio.body')}
-      </p>
+      <div class="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-paper-muted)] md:text-base">
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
     </div>
 
     <div
       data-reveal
       class="mt-8 rounded-lg border border-[var(--color-hairline)] bg-[var(--color-surface)] p-6 md:p-8"
     >
-      <p class="text-xs tracking-[0.12em] text-[var(--color-brass)] uppercase">
-        {t('studio.focusLabel')}
+      <p class="font-display text-lg font-semibold text-[var(--color-paper)] sm:text-xl">
+        {t('studio.closing')}
       </p>
-      <ul class="mt-5 grid gap-4 sm:grid-cols-2">
-        {
-          focus.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-[var(--color-paper)]">
-              <span
-                aria-hidden="true"
-                class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-brass)]"
-              />
-              {item}
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </div>
 </section>

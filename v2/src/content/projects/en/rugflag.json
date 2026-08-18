@@ -1,10 +1,10 @@
 {
   "title": "RugFlag",
   "category": "Handmade rug studio · Netherlands",
-  "tagline": "A bilingual landing page for a rug studio, shipped as lightweight static hosting.",
+  "tagline": "A bilingual site for a handmade rug studio, with a catalog of finished pieces and the option to commission a custom design.",
   "featured": false,
   "order": 3,
-  "summary": "A multilingual (EN/NL) landing page for a rug studio, built as a lightweight static site on GitHub Pages.",
+  "summary": "A visual, image-led project built around the work itself. The site lets you browse finished rugs, get a feel for the studio, and see how a custom rug commission works.",
 
   "location": "Netherlands",
 

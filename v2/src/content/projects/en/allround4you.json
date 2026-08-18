@@ -1,16 +1,16 @@
 {
   "title": "ALLROUND4YOU",
   "category": "Construction & renovation · Netherlands",
-  "tagline": "A one-page site that turns a WhatsApp-only contractor into a business people can research before they call.",
+  "tagline": "The first website for a construction business that had only ever worked through referrals and WhatsApp.",
   "featured": true,
   "order": 1,
-  "summary": "A Dutch construction business with 20+ years of experience had no website — every relationship started cold on WhatsApp. JOMO built a single page the owner could send as a link.",
+  "summary": "ALLROUND4YOU already had real projects and clients, just no website. The brief was simple: bring everything together in one place, so a prospective customer could see the work, understand the services, and get in touch directly.",
 
   "client": "ALLROUND4YOU Bouw & Service",
-  "role": "End-to-end: IA, design, content, development, domain and hosting",
+  "role": "End-to-end: structure, design, copy, development, domain and hosting",
   "year": "2026",
   "location": "Netherlands (client active nationwide)",
-  "timeline": "About 20 calendar days, including client feedback cycles",
+  "timeline": "About 20 days, including revisions and back-and-forth",
 
   "liveUrl": "https://allround4you.com",
   "tags": ["One-page site", "Client project", "Construction & renovation", "Dutch"],
@@ -22,14 +22,15 @@
     { "label": "Client", "value": "ALLROUND4YOU Bouw & Service" },
     { "label": "Industry", "value": "Construction & renovation" },
     { "label": "Origin", "value": "Personal recommendation" },
-    { "label": "Scope", "value": "IA, design, content, build, hosting" },
+    { "label": "Scope", "value": "Structure, design, copy, development, hosting" },
     { "label": "Revisions", "value": "~6 client rounds" },
-    { "label": "Timeline", "value": "~20 days, incl. feedback" }
+    { "label": "Timeline", "value": "~20 days" }
   ],
 
-  "problem": "The owner had 20+ years of experience but no way to show it. Every relationship started cold on WhatsApp, with nothing to send a prospect before they decided whether to call.",
-  "solution": "A single, well-organized page rather than a multi-page site — enough to build trust in under a minute. It covers all twelve service categories, a real project gallery, and direct call/WhatsApp actions. Built end-to-end — IA, design, content, development, domain and hosting — through six client revision rounds.",
-  "outcome": "Delivered in about 20 days including feedback cycles. The client was satisfied and said he'd recommend JOMO to other contacts.",
+  "problem": "ALLROUND4YOU had never had a website. New clients mostly came through referrals, and everything after that happened over WhatsApp. What was missing was a simple way to show someone the services and finished work before the first conversation even started.",
+  "solution": "I handled the whole project myself: structure, copy, design and development. The site covers the main service categories, photos of finished work, and direct ways to get in touch by phone or WhatsApp. I also set up the domain and hosting, so the client ended up with a working website, not just a design file.",
+  "collaboration": "We stayed in close contact throughout. Details, photos and copy went through a few rounds of revisions along the way, about six in total.",
+  "outcome": "The site is live on its own domain. The client now has a page he can send to a prospective customer instead of explaining the services and forwarding photos every time. He was happy with the result and said he'd recommend me to people he knows.",
 
   "workGallery": [
     { "src": "/images/projects/allround4you/hero.jpg", "alt": "Renovated open-plan kitchen with exposed timber ceiling beams and pendant lighting, part of ALLROUND4YOU's completed work" },

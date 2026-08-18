@@ -39,6 +39,11 @@ const projects = defineCollection({
 
     problem: z.string().optional(),
     solution: z.string().optional(),
+    // How the work with the client actually went (revision rounds, contact
+    // cadence) — kept separate from `solution` since it's about the
+    // collaboration, not the deliverable. Optional; only fill in where a
+    // project has real detail to say here.
+    collaboration: z.string().optional(),
     outcome: z.string().optional(),
 
     // Real photos of the client's underlying work — supporting context,
