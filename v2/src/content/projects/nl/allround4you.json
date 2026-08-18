@@ -1,0 +1,49 @@
+{
+  "title": "ALLROUND4YOU",
+  "category": "Verbouw & renovatie · Nederland",
+  "tagline": "De eerste website voor een verbouwbedrijf dat het tot dan toe moest hebben van mond-tot-mondreclame en WhatsApp.",
+  "featured": true,
+  "order": 1,
+  "summary": "ALLROUND4YOU had al echte klussen en klanten, maar geen eigen website. De opdracht was simpel: alles op één plek zetten, zodat een potentiële klant het werk kan zien, de diensten begrijpt en direct contact kan opnemen.",
+
+  "client": "ALLROUND4YOU Bouw & Service",
+  "role": "Van A tot Z: structuur, design, teksten, ontwikkeling, domein en hosting",
+  "year": "2026",
+  "location": "Nederland (klant actief door het hele land)",
+  "timeline": "Ongeveer 20 dagen, inclusief revisies en overleg",
+
+  "liveUrl": "https://allround4you.com",
+  "tags": ["Eenpager", "Klantproject", "Verbouw & renovatie", "Nederlandstalig"],
+
+  "coverImage": "/images/projects/allround4you/hero.jpg",
+  "coverImageAlt": "Gerenoveerde open keuken met houten plafondbalken en hanglampen, onderdeel van afgerond werk van ALLROUND4YOU",
+
+  "facts": [
+    { "label": "Klant", "value": "ALLROUND4YOU Bouw & Service" },
+    { "label": "Branche", "value": "Verbouw & renovatie" },
+    { "label": "Hoe gevonden", "value": "Persoonlijke aanbeveling" },
+    { "label": "Omvang", "value": "Structuur, design, teksten, ontwikkeling, hosting" },
+    { "label": "Revisies", "value": "~6 rondes met de klant" },
+    { "label": "Doorlooptijd", "value": "~20 dagen" }
+  ],
+
+  "problem": "ALLROUND4YOU had nog nooit een website gehad. Nieuwe klanten kwamen vooral via aanbevelingen binnen, en daarna verliep alles via WhatsApp. Er was een simpele manier nodig om iemand de diensten en het eerdere werk te laten zien, nog voor het eerste gesprek.",
+  "solution": "Ik heb het project volledig zelf gedaan: structuur, teksten, design en ontwikkeling. De site laat de belangrijkste werkzaamheden zien, met foto's van afgerond werk en directe contactmogelijkheden via telefoon en WhatsApp. Ik heb ook domein en hosting geregeld, zodat de klant een werkende site kreeg, en niet alleen een ontwerp of een setje bestanden.",
+  "collaboration": "We hebben tijdens het project steeds contact gehouden. Details, foto's en teksten zijn onderweg een paar keer aangepast, in totaal zo'n zes revisierondes.",
+  "outcome": "De site staat live op een eigen domein. De klant heeft nu een pagina die hij naar een potentiële opdrachtgever kan sturen, in plaats van steeds opnieuw de diensten uit te leggen en foto's door te sturen. Na afloop was de klant tevreden over het resultaat en zei dat hij me zou aanbevelen bij kennissen en zakenpartners.",
+
+  "workGallery": [
+    { "src": "/images/projects/allround4you/hero.jpg", "alt": "Gerenoveerde open keuken met houten plafondbalken en hanglampen, onderdeel van afgerond werk van ALLROUND4YOU" },
+    { "src": "/images/projects/allround4you/gallery/work-6.jpg", "alt": "Ingebouwde keukenkasten afgewerkt in donker houtfineer, naast een openslaande tuindeur over de volle hoogte" },
+    { "src": "/images/projects/allround4you/gallery/work-8.jpg", "alt": "Gevelrenovatie in uitvoering bij een woning met twee verdiepingen, met nieuwe donkere gevelbekleding, steigers en ladders" },
+    { "src": "/images/projects/allround4you/gallery/work-4.jpg", "alt": "Afgewerkte woonkamer met een houten balkenplafond, een boogvormige vloerlamp en zicht op de tuin" },
+    { "src": "/images/projects/allround4you/gallery/work-22.webp", "alt": "Nieuw terras in aanleg bij een tuinkamer, met effen grijze tegels en één patroontegel als accent" }
+  ],
+  "siteShowcase": [
+    { "src": "/images/projects/allround4you/site/desktop.png", "alt": "Desktopscreenshot van de ALLROUND4YOU-homepage: kop, WhatsApp- en belknoppen, en drie trustbadges over een projectfoto" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/allround4you/site/mobile-hero.png", "alt": "Mobiel screenshot van de ALLROUND4YOU hero-sectie, met kop, WhatsApp-knop en belknop onder elkaar over de volle breedte" },
+    { "src": "/images/projects/allround4you/site/mobile-about.png", "alt": "Mobiel screenshot van de ALLROUND4YOU-introductie over het bedrijf en de diensten, onder de hero-sectie" }
+  ]
+}

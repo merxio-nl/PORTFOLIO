@@ -1,0 +1,25 @@
+{
+  "title": "Apaxic Towing",
+  "category": "Takelservice & pechhulp · Verenigde Staten",
+  "tagline": "Een site voor een takelbedrijf die daadwerkelijk klanten oplevert.",
+  "featured": false,
+  "order": 2,
+  "summary": "Een website voor een takelbedrijf in de staat Washington, gebouwd rond één praktische taak: iemand die pechhulp nodig heeft, moet het bedrijf snel kunnen vinden, het werkgebied begrijpen en direct contact kunnen opnemen met de chauffeur.",
+
+  "location": "Bonney Lake, Washington, VS",
+
+  "liveUrl": "https://apaxictowing.com",
+  "tags": ["Landingspagina", "Klantproject", "Takelservice & pechhulp", "VS"],
+
+  "coverImage": "/images/projects/apaxic-towing/site/desktop.png",
+  "coverImageAlt": "Homepage van Apaxic Towing: een sleepwagen 's nachts, de kop 'Fast & Reliable Towing Service' en bel- en WhatsApp-knoppen",
+
+  "outcome": "Na de lancering ging de site samen met zoekadvertenties lopen. Mensen vinden het bedrijf via zoekmachines, komen op de site terecht en nemen rechtstreeks contact op met de eigenaar. Een deel van die aanvragen wordt een betaalde takelklus.",
+
+  "siteShowcase": [
+    { "src": "/images/projects/apaxic-towing/site/desktop.png", "alt": "Desktopscreenshot van de Apaxic Towing-homepage met informatie over het werkgebied en bel-/WhatsApp-knoppen" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/apaxic-towing/site/mobile.png", "alt": "Mobiel screenshot van de Apaxic Towing-homepage, over de volle breedte gestapeld" }
+  ]
+}

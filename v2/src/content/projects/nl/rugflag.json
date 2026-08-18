@@ -1,0 +1,24 @@
+{
+  "title": "RugFlag",
+  "category": "Studio voor handgemaakte vloerkleden · Nederland",
+  "tagline": "Een tweetalige site voor een studio die vloerkleden met de hand maakt, met een catalogus van afgeronde stukken en de optie om een eigen ontwerp te laten maken.",
+  "featured": false,
+  "order": 3,
+  "summary": "Een visueel project waarin het werk zelf centraal staat. Op de site bekijk je afgeronde vloerkleden, krijg je een indruk van de studio en zie je hoe een op-maat-ontwerp werkt.",
+
+  "location": "Nederland",
+
+  "liveUrl": "https://merxio-nl.github.io/RugFlagFixed/index.html",
+  "repoUrl": "https://github.com/merxio-nl/RugFlagFixed",
+  "tags": ["HTML/CSS/JS", "Meertaligheid", "GitHub Pages"],
+
+  "coverImage": "/images/projects/rugflag/site/desktop.png",
+  "coverImageAlt": "RugFlag-homepage met een close-up foto van kleurrijke handgemaakte getufte vloerkleden met cartoon- en pop-cultuurmotieven",
+
+  "siteShowcase": [
+    { "src": "/images/projects/rugflag/site/desktop.png", "alt": "Desktopscreenshot van de RugFlag-homepage met handgemaakte getufte vloerkleden en de sitenavigatie" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/rugflag/site/mobile.png", "alt": "Mobiel screenshot van de RugFlag-homepage" }
+  ]
+}

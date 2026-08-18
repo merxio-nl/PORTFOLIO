@@ -1,5 +1,6 @@
 ---
 import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+import { languages } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -16,13 +17,15 @@ const links = [
   { href: localizedPath('/#contact', lang), label: t('nav.contact') },
 ];
 
-// The EN/RU trees mirror each other 1:1, so swapping the /ru prefix maps
-// the current page to its counterpart in the other language.
+// All three locale trees mirror each other 1:1, so stripping any existing
+// /ru or /nl prefix and re-adding the target locale's prefix maps the
+// current page to its counterpart in another language.
 const currentPath = Astro.url.pathname;
-const otherLangHref =
-  lang === 'en'
-    ? `/ru${currentPath === '/' ? '' : currentPath}`
-    : currentPath.replace(/^\/ru/, '') || '/';
+function pathForLang(targetLang: Lang): string {
+  const stripped = currentPath.replace(/^\/(ru|nl)(?=\/|$)/, '') || '/';
+  return localizedPath(stripped, targetLang);
+}
+const langCodes = Object.keys(languages) as Lang[];
 ---
 
 <header
@@ -36,7 +39,7 @@ const otherLangHref =
       JOMO<span class="text-[var(--color-brass)]">.</span>
     </a>
 
-    <nav aria-label="Primary" class="hidden items-center gap-8 md:flex">
+    <nav aria-label="Primary" class="hidden items-center gap-8 lg:flex">
       {
         links.map((link) => (
           <a
@@ -50,13 +53,27 @@ const otherLangHref =
     </nav>
 
     <div class="flex items-center gap-3 md:gap-4">
-      <a
-        href={otherLangHref}
-        title={t('nav.langSwitch')}
-        class="rounded-full border border-[var(--color-hairline-strong)] px-2.5 py-1 text-small text-[var(--color-paper-muted)] transition-colors hover:border-[var(--color-brass)] hover:text-[var(--color-paper)]"
-      >
-        {lang === 'en' ? 'RU' : 'EN'}
-      </a>
+      <div class="flex items-center overflow-hidden rounded-full border border-[var(--color-hairline-strong)] text-small">
+        {
+          langCodes.map((code, index) => {
+            const isActive = code === lang;
+            const border = index > 0 ? 'border-l border-[var(--color-hairline-strong)]' : '';
+            return isActive ? (
+              <span class={`px-2.5 py-1 text-[var(--color-paper)] ${border}`} aria-current="true">
+                {code.toUpperCase()}
+              </span>
+            ) : (
+              <a
+                href={pathForLang(code)}
+                title={languages[code]}
+                class={`px-2.5 py-1 text-[var(--color-paper-muted)] transition-colors hover:text-[var(--color-paper)] ${border}`}
+              >
+                {code.toUpperCase()}
+              </a>
+            );
+          })
+        }
+      </div>
       <a
         href={localizedPath('/#contact', lang)}
         class="hidden rounded-full bg-[var(--color-paper)] px-4 py-2 text-nav text-[var(--color-ink)] transition-opacity duration-200 hover:opacity-90 sm:inline-block"
@@ -69,7 +86,7 @@ const otherLangHref =
         type="button"
         aria-expanded="false"
         aria-controls="nav-mobile-menu"
-        class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+        class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 lg:hidden"
       >
         <span class="sr-only">Toggle menu</span>
         <span
@@ -87,7 +104,7 @@ const otherLangHref =
   <nav
     id="nav-mobile-menu"
     aria-label="Mobile"
-    class="fixed inset-x-0 top-14 bottom-0 hidden overflow-y-auto border-t border-[var(--color-hairline)] bg-[var(--color-ink)] md:hidden"
+    class="fixed inset-x-0 top-14 bottom-0 hidden overflow-y-auto border-t border-[var(--color-hairline)] bg-[var(--color-ink)] lg:hidden"
   >
     <div class="flex flex-col gap-1 px-6 py-6">
       {

@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import CaseStudyView from '../../../components/views/CaseStudyView.astro';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects', ({ id }) => id.startsWith('nl/'))).sort(
+    (a, b) => a.data.order - b.data.order
+  );
+
+  return projects.map((project, index) => ({
+    params: { slug: project.id.split('/').slice(1).join('/') },
+    props: {
+      project,
+      next: projects[(index + 1) % projects.length],
+    },
+  }));
+}
+
+const { project, next } = Astro.props;
+---
+
+<CaseStudyView lang="nl" project={project} next={next} />

@@ -1,6 +1,7 @@
 export const languages = {
   en: 'English',
   ru: 'Русский',
+  nl: 'Nederlands',
 } as const;
 
 export const defaultLang = 'en';
@@ -13,7 +14,6 @@ export const ui = {
     'nav.creator': 'Creator',
     'nav.contact': 'Contact',
     'nav.startProject': 'Get in touch',
-    'nav.langSwitch': 'Russian — Ru',
 
     'hero.heading': 'Websites from idea to launch.',
     'hero.subhead':
@@ -55,7 +55,7 @@ export const ui = {
     'services.development.item3': 'Domain & hosting',
 
     'studio.eyebrow': 'JOMO',
-    'studio.heading': "Only what's actually needed.",
+    'studio.heading': "Don't add what doesn't need to be there. Form follows purpose.",
     'studio.p1': "JOMO isn't just a studio name to me. It's how I approach the work.",
     'studio.p2':
       'A website can hold almost anything: animations, pages, features, effects. More isn\'t automatically better.',
@@ -66,7 +66,7 @@ export const ui = {
     'creator.eyebrow': 'Creator',
     'creator.heading': "Who's behind JOMO",
     'creator.name': 'Yaroslav Redka',
-    'creator.role': 'Creator & developer, JOMO Studio · Tilburg, Netherlands',
+    'creator.role': 'Director & developer, JOMO Studio · Tilburg, Netherlands',
     'creator.bio1':
       "JOMO started as a personal project. I'd wanted to build my own studio for a few years, but getting real experience and learning to see projects through from start to finish mattered more at first.",
     'creator.bio2':
@@ -77,15 +77,17 @@ export const ui = {
     'process.eyebrow': 'Process',
     'process.heading': 'How the process works',
     'process.discover.name': 'We talk',
-    'process.discover.detail': 'You tell me about the project, the goal, and what result you have in mind.',
+    'process.discover.detail':
+      "You tell me about the project: what's already there and what result you want. I ask questions to properly understand the problem.",
     'process.define.name': 'We plan',
-    'process.define.detail': 'We define the structure, the content, the timeline, and what the project actually needs.',
+    'process.define.detail':
+      'We define the structure, content, functionality and timeline, based on what the project actually needs.',
     'process.design.name': 'I build a first version',
     'process.design.detail':
       'I put together the design and the site itself, sharing progress and explaining decisions along the way.',
     'process.build.name': 'We refine it together',
     'process.build.detail':
-      'You send feedback, I make the changes. Usually 2–4 focused rounds get us to the final version.',
+      'You send feedback, I make the changes. I typically plan for {{emphasis}}2–4 full rounds of revisions{{/emphasis}} to get to the final version.',
     'process.launch.name': 'We launch',
     'process.launch.detail':
       'I test the site, connect the domain and hosting, and publish the finished version.',
@@ -126,7 +128,6 @@ export const ui = {
     'nav.creator': 'О создателе',
     'nav.contact': 'Контакты',
     'nav.startProject': 'Обсудить проект',
-    'nav.langSwitch': 'English — En',
 
     'hero.heading': 'Создаю сайты. От идеи до запуска.',
     'hero.subhead':
@@ -232,5 +233,118 @@ export const ui = {
     'case.nextProject': 'Следующий проект',
     'case.aboutProject': 'О проекте',
     'case.noFullCaseStudy': 'Подробный кейс для этого проекта пока не готов.',
+  },
+  nl: {
+    'nav.work': 'Werk',
+    'nav.services': 'Diensten',
+    'nav.studio': 'Studio',
+    'nav.creator': 'Maker',
+    'nav.contact': 'Contact',
+    'nav.startProject': 'Neem contact op',
+
+    'hero.heading': 'Websites van idee tot lancering.',
+    'hero.subhead':
+      "Voor bedrijven, zzp'ers en eigen projecten. Samen bepalen we wat de site nodig heeft, en daar bouw ik een werkende website van. Geen overbodige extra's, een heldere aanpak en aandacht voor detail.",
+    'hero.ctaPrimary': 'Neem contact op',
+    'hero.ctaSecondary': 'Bekijk het werk',
+
+    'work.eyebrow': 'Werk',
+    'work.heading': 'Recente projecten',
+    'work.intro': 'Een paar sites die ik voor klanten heb gebouwd. Je ziet het resultaat, en welke vraag elk project moest oplossen.',
+    'work.viewAll': 'Al het werk',
+    'work.viewCaseStudy': 'Bekijk de case',
+
+    'workIndex.eyebrow': 'Werk',
+    'workIndex.heading': 'Recente projecten.',
+    'workIndex.subhead': 'Sites die ik voor klanten heb gebouwd. Open een project voor de details.',
+
+    'services.eyebrow': 'Diensten',
+    'services.heading': 'Alles wat nodig is om een site te lanceren',
+    'services.subhead':
+      'Kom met een uitgewerkt plan, of gewoon met een idee. Ik help bepalen wat het project nodig heeft, en regel daarna de rest tot en met de lancering.',
+    'services.strategy.name': 'Structuur & content',
+    'services.strategy.summary':
+      'Ik bepaal wat er op de site moet staan, hoe je diensten of werk het beste laat zien, en wat voor een bezoeker echt telt.',
+    'services.strategy.item1': 'Sitestructuur',
+    'services.strategy.item2': 'Teksten',
+    'services.strategy.item3': 'Positionering',
+    'services.design.name': 'Design',
+    'services.design.summary':
+      'Ik bouw de visuele kant rond jouw project. Geen standaardeffecten of elementen die er niet thuishoren.',
+    'services.design.item1': 'Visuele richting',
+    'services.design.item2': 'Responsive design',
+    'services.design.item3': 'Interface',
+    'services.development.name': 'Ontwikkeling & lancering',
+    'services.development.summary':
+      'Ik maak van het goedgekeurde ontwerp een werkende site, test die op verschillende apparaten, koppel het domein en zet alles live.',
+    'services.development.item1': 'Ontwikkeling',
+    'services.development.item2': 'Testen op apparaten',
+    'services.development.item3': 'Domein & hosting',
+
+    'studio.eyebrow': 'JOMO',
+    'studio.heading': 'Je voegt niet toe wat niet nodig is. Vorm volgt functie.',
+    'studio.p1': 'JOMO is voor mij niet zomaar een naam. Het is hoe ik naar mijn werk kijk.',
+    'studio.p2':
+      "Een website kan bijna alles bevatten: animaties, pagina's, functies, effecten. Meer is niet automatisch beter.",
+    'studio.p3': 'Daarom begin ik met een andere vraag: wat heeft dit project echt nodig?',
+    'studio.p4':
+      "Soms is het antwoord een eenvoudige site van een paar pagina's. Soms is er iets veel uitgebreiders nodig. Wat telt, is dat elke keuze ergens op slaat en dat de site prettig te gebruiken is.",
+
+    'creator.eyebrow': 'Maker',
+    'creator.heading': 'Wie er achter JOMO zit',
+    'creator.name': 'Yaroslav Redka',
+    'creator.role': 'Directeur en ontwikkelaar, JOMO Studio · Tilburg, Nederland',
+    'creator.bio1':
+      'JOMO begon als een persoonlijk project. Ik wilde al een paar jaar een eigen studio, maar eerst was het belangrijker om echte ervaring op te doen en te leren een project van begin tot eind te trekken.',
+    'creator.bio2':
+      'Nu doe ik ieder project zelf: ik spreek met de klant, bedenk de structuur, verzorg design en ontwikkeling, en breng de site tot de lancering.',
+    'creator.bio3':
+      'Voorlopig blijft JOMO een kleine eenmansstudio. Op termijn kan die groeien en andere specialisten erbij halen, daar waar dat echt iets toevoegt.',
+
+    'process.eyebrow': 'Proces',
+    'process.heading': 'Hoe het proces werkt',
+    'process.discover.name': 'We maken kennis',
+    'process.discover.detail':
+      'Je vertelt over het project: wat er al is en welk resultaat je voor ogen hebt. Ik stel vragen om de opgave scherp te krijgen.',
+    'process.define.name': 'We maken een plan',
+    'process.define.detail':
+      'We bepalen structuur, content, functionaliteit en planning, op basis van wat het project echt nodig heeft.',
+    'process.design.name': 'Ik bouw de eerste versie',
+    'process.design.detail':
+      'Ik werk het design en de site zelf uit, en laat onderweg zien wat ik heb gemaakt en waarom.',
+    'process.build.name': 'We verfijnen samen',
+    'process.build.detail':
+      'Je verzamelt je feedback, ik verwerk de aanpassingen. Ik reken meestal op {{emphasis}}2–4 volwaardige revisierondes{{/emphasis}} om tot de definitieve versie te komen.',
+    'process.launch.name': 'We lanceren',
+    'process.launch.detail': 'Ik controleer de site, koppel domein en hosting, en zet de definitieve versie live.',
+
+    'contact.eyebrow': 'Contact',
+    'contact.heading': "Heb je een project? Laten we praten.",
+    'contact.body':
+      'Vertel wat je wilt maken en wat er al is. Ook met alleen een idee kunnen we prima een eerste gesprek voeren.',
+    'contact.ctaPrimary': 'Mail me',
+    'contact.remoteNote': 'Ik werk op afstand, en voor klanten in Nederland kan dat ook gewoon in persoon.',
+
+    'footer.tagline': 'Websites, van idee tot lancering.',
+    'footer.navigate': 'Navigatie',
+    'footer.contact': 'Contact',
+    'footer.copyright': '© 2026 JOMO Studio.',
+    'footer.location': 'Tilburg, Nederland',
+
+    'case.backToWork': 'Al het werk',
+    'case.label': 'Case',
+    'case.problem': 'De opgave',
+    'case.solution': 'De oplossing',
+    'case.collaboration': 'Samenwerking met de klant',
+    'case.delivered': 'Wat er is opgeleverd',
+    'case.showcase': 'De site',
+    'case.mobileShowcase': 'Op mobiel',
+    'case.clientWork': 'Gerelateerd werk',
+    'case.outcome': 'Resultaat',
+    'case.visitLive': 'Bekijk de site',
+    'case.viewRepo': 'Bekijk de repository',
+    'case.nextProject': 'Volgend project',
+    'case.aboutProject': 'Over dit project',
+    'case.noFullCaseStudy': 'Een uitgebreide case voor dit project is er nog niet.',
   },
 } as const;

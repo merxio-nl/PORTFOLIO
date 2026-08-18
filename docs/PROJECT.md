@@ -25,8 +25,10 @@ design decisions are recorded here.
   alongside the studio brand.
 - The portfolio must support adding future projects/case studies (i.e. the
   structure should not assume a fixed, small project count).
-- Planned languages for V2: English (canonical), Russian, Dutch. English is
-  the only populated locale in the first V2 prototype.
+- Languages for V2: English (default, unprefixed route), Russian (`/ru/`),
+  Dutch (`/nl/`) — all three are populated. Russian was the editorial
+  source of truth for the EN/NL localization pass (see `docs/DECISIONS.md`
+  ADR-009); English remains the architectural default locale.
 
 ## ALLROUND4YOU (fourth verified project)
 
@@ -116,3 +118,17 @@ design decisions are recorded here.
   in the PR instead: connect a separate static host (e.g. Vercel/Netlify)
   to this repo with root directory `v2/`, which needs zero changes to the
   existing Pages config and gives automatic preview URLs per branch/PR.
+- Typography refinement round: replaced Manrope with Golos Text for
+  display/heading roles and introduced a shared role-based typography
+  system (Display/H1/H2/H3/Lead/Body/Small/Eyebrow/Nav). See
+  `docs/DECISIONS.md` ADR-008.
+- EN/NL localization round (no architecture/design change beyond what's
+  needed for a third locale): Russian was frozen as the approved editorial
+  source and used to bring English up to date (revised philosophy line,
+  Process steps 1/2/4, Creator title) and to write a full, independently
+  natural Dutch localization — UI dictionary (`src/i18n/ui.ts`) and all
+  four project case studies (`src/content/projects/nl/`). The two-language
+  (`EN`/`RU`) nav switcher was replaced with a three-way switcher, which
+  required moving the desktop-nav breakpoint from `md` (768px) to `lg`
+  (1024px) to avoid header crowding at tablet widths — the tablet range
+  now uses the existing hamburger menu. See `docs/DECISIONS.md` ADR-009.

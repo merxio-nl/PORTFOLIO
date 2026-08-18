@@ -1,10 +1,11 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n/utils';
 
 interface Props {
   title: string;
   description: string;
-  lang?: 'en' | 'ru';
+  lang?: Lang;
 }
 
 const { title, description, lang = 'en' } = Astro.props;

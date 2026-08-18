@@ -186,3 +186,57 @@ info → body hierarchy everywhere text appears.
 (`text-{role} font-display` for heading roles) instead of arbitrary
 Tailwind text utilities. Reserve `text-display` for statement-level
 copy only — it is not a generic "make it bigger" option.
+
+---
+
+## ADR-009: EN/NL localization — Russian as editorial source, three-way language switcher
+
+**Date:** 2026-08-18
+**Status:** Accepted
+
+Following owner approval of the Russian copy, English was brought up to
+date and Dutch was fully localized and activated as a third live locale
+(routing for `nl` was already declared in `astro.config.mjs` per ADR-006
+but had no content or UI dictionary until now):
+
+1. **Russian as editorial source, not literal translation.** English and
+   Dutch each got an independently natural localization of the same
+   facts/philosophy/process, not a sentence-by-sentence translation.
+   Concretely: the JOMO philosophy line, Process steps 1/2/4, and the
+   Creator job title were each given their own EN and NL wording rather
+   than one forced translation reused for both — see the PR description
+   for the three-language comparison.
+2. **NL content architecture mirrors EN/RU exactly.** `src/i18n/ui.ts`
+   gained a full `nl` dictionary; `src/content/projects/nl/*.json` was
+   added for all four projects with the same schema and field-presence
+   pattern as `en/`/`ru/` (e.g. RugFlag has no `problem`/`solution`/
+   `outcome` in any of the three languages — that's a deliberate,
+   consistent honesty choice, not a gap); routing got
+   `src/pages/nl/index.astro`, `nl/work/index.astro`, and
+   `nl/work/[slug].astro`, mirroring the existing `ru/` pages exactly.
+3. **Three-way language switcher.** `Nav.astro`'s two-language toggle
+   (a single link showing the "other" language code) was replaced with a
+   small pill listing all three codes, generated from `languages` in
+   `i18n/ui.ts` so a future fourth locale doesn't need another rewrite.
+   The now-unused `nav.langSwitch` tooltip string was removed from the EN
+   and RU dictionaries (dead code from the old toggle; no visible RU copy
+   changed).
+4. **Desktop-nav breakpoint moved from `md` (768px) to `lg` (1024px).**
+   With three language codes plus two divider borders, the header (nav
+   links + switcher + CTA) no longer fit at 768px in any language —
+   confirmed by visible wrapping of the CTA button and RU nav labels
+   before this change. The full desktop nav now appears from 1024px;
+   768–1023px uses the pre-existing hamburger menu, which already scales
+   to arbitrary label lengths.
+
+**Why:** The owner asked for two independently natural localizations, not
+a translation pass, and asked that RU stay untouched except where a
+technical/architecture change genuinely required it. The breakpoint move
+is that kind of change: a direct, unavoidable side effect of adding a
+third language code to the switcher, fixed at the responsive-layout level
+rather than by shortening any language's copy.
+
+**How to apply:** A future fourth locale needs a matching
+`src/i18n/ui.ts` dictionary block, `src/content/projects/<lang>/*.json`
+set, and `src/pages/<lang>/...` route tree — the switcher and
+`pathForLang` prefix-stripping logic in `Nav.astro` need no changes.
