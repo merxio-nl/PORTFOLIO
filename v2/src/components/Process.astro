@@ -15,6 +15,15 @@ const steps = [
   { name: t('process.build.name'), detail: t('process.build.detail') },
   { name: t('process.launch.name'), detail: t('process.launch.detail') },
 ];
+
+// A step's detail may wrap one fragment in {{emphasis}}...{{/emphasis}} to
+// call out a specific fact (e.g. the number of revision rounds) with type
+// weight instead of a new card/box. Plain strings render unchanged.
+function splitEmphasis(detail: string) {
+  const match = detail.match(/^(.*)\{\{emphasis\}\}(.*)\{\{\/emphasis\}\}(.*)$/s);
+  if (!match) return { before: detail, emphasis: null, after: '' };
+  return { before: match[1], emphasis: match[2], after: match[3] };
+}
 ---
 
 <section class="border-t border-[var(--color-hairline)] py-12 md:py-16">
@@ -33,17 +42,22 @@ const steps = [
       class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-5 md:gap-5"
     >
       {
-        steps.map((step, index) => (
-          <li class="border-t border-[var(--color-hairline-strong)] pt-4">
-            <span class="text-small font-display text-[var(--color-brass)]">0{index + 1}</span>
-            <h3 class="mt-2 text-h3 font-display text-[var(--color-paper)]">
-              {step.name}
-            </h3>
-            <p class="mt-1.5 text-small text-[var(--color-paper-muted)]">
-              {step.detail}
-            </p>
-          </li>
-        ))
+        steps.map((step, index) => {
+          const { before, emphasis, after } = splitEmphasis(step.detail);
+          return (
+            <li class="border-t border-[var(--color-hairline-strong)] pt-4">
+              <span class="text-small font-display text-[var(--color-brass)]">0{index + 1}</span>
+              <h3 class="mt-2 text-h3 font-display text-[var(--color-paper)]">
+                {step.name}
+              </h3>
+              <p class="mt-1.5 text-small text-[var(--color-paper-muted)]">
+                {before}
+                {emphasis && <span class="font-semibold text-[var(--color-paper)]">{emphasis}</span>}
+                {after}
+              </p>
+            </li>
+          );
+        })
       }
     </ol>
   </div>

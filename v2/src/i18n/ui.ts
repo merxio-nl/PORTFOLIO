@@ -95,6 +95,7 @@ export const ui = {
     'contact.body':
       "Tell me what you're trying to build and what you already have. Even if it's just an idea so far, that's enough for a first conversation.",
     'contact.ctaPrimary': 'Write to me',
+    'contact.remoteNote': "I work remotely. For clients in the Netherlands, meeting in person is also an option.",
 
     'footer.tagline': 'Websites, from idea to launch.',
     'footer.navigate': 'Navigate',
@@ -189,15 +190,17 @@ export const ui = {
     'process.eyebrow': 'Процесс',
     'process.heading': 'Как проходит работа',
     'process.discover.name': 'Знакомимся',
-    'process.discover.detail': 'Вы рассказываете о проекте, задаче и о том, каким представляете результат.',
+    'process.discover.detail':
+      'Вы рассказываете о проекте: что уже есть и какой результат нужен. Я задаю вопросы, чтобы точнее понять задачу.',
     'process.define.name': 'Собираем план',
-    'process.define.detail': 'Определяем структуру, содержание, сроки и то, что действительно нужно сделать.',
+    'process.define.detail':
+      'Определяем структуру, содержание, функциональность и сроки, ориентируясь на то, что действительно нужно проекту.',
     'process.design.name': 'Делаю первую версию',
     'process.design.detail':
       'Собираю дизайн и сам сайт. По ходу работы показываю результат и объясняю принятые решения.',
     'process.build.name': 'Доводим вместе',
     'process.build.detail':
-      'Вы собираете замечания, я вношу правки. Обычно хватает 2–4 содержательных раундов, чтобы прийти к финальной версии.',
+      'Вы собираете замечания, я вношу правки. Обычно закладываю {{emphasis}}2–4 полноценных раунда правок{{/emphasis}}, чтобы дойти до финальной версии.',
     'process.launch.name': 'Запускаем',
     'process.launch.detail': 'Проверяю сайт, подключаю домен и хостинг и публикую готовую версию.',
 
@@ -206,6 +209,7 @@ export const ui = {
     'contact.body':
       'Расскажите, что хотите сделать и что уже есть. Даже если пока есть только идея, этого достаточно для первого разговора.',
     'contact.ctaPrimary': 'Написать мне',
+    'contact.remoteNote': 'Работаю удалённо, а в Нидерландах при необходимости можем встретиться лично.',
 
     'footer.tagline': 'Сайты от идеи до запуска.',
     'footer.navigate': 'Навигация',
