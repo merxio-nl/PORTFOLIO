@@ -320,3 +320,56 @@ addition (an `image` prop already fits the existing pattern).
 metadata through `Base.astro` — no per-page work needed. New projects
 automatically appear in the sitemap through the existing content
 collection — no sitemap work needed.
+
+---
+
+## ADR-011: Brand kit — outlined-path wordmark/mark, one neutral OG card
+
+**Date:** 2026-08-19
+**Status:** Accepted
+
+Formalized the existing (not new) JOMO visual identity into `brand/` —
+see `brand/README.md` for the full asset list and usage rules. Two
+decisions here are persistent enough to record:
+
+1. **The wordmark and mark are true vector paths, not live text.** The
+   "JOMO" and "J" glyphs were extracted from the actual Golos Text font
+   files (SemiBold/600 and Bold/700, matching exactly what the site
+   loads) and converted to SVG path outlines — not re-drawn by eye, not
+   left as `<text font-family="Golos Text">`. This makes the brand
+   assets font-independent: they render identically in any tool, at any
+   size, with zero risk of silently falling back to a generic system
+   font if the real font isn't installed or hasn't loaded yet. Golos
+   Text is OFL-licensed, which permits this.
+2. **`v2/public/favicon.svg` was consolidated onto the same path
+   geometry as `brand/logo/jomo-mark.svg`.** It previously rendered its
+   "J" as live text — meaning the actual site favicon depended on the
+   Golos Text web font loading, for an asset requested as early as any
+   resource on the page. Same visual output (verified via a rendered
+   side-by-side comparison), now with that fragility removed. The PNG
+   favicon/apple-touch-icon rasters were regenerated from the corrected
+   source for consistency.
+3. **One neutral English OG image across all three locales**
+   (`v2/public/og-image.png`, sourced from `brand/social/`), not three
+   localized cards. `Base.astro` now emits `og:image` (+ width/height/
+   type) and upgrades `twitter:card` to `summary_large_image` with
+   `twitter:image`, using the same `Astro.site`-derived absolute-URL
+   pattern as the existing canonical/hreflang metadata (ADR-010) — no
+   hardcoded preview URL. A three-language card system is deferred:
+   the composition (wordmark + "Websites from idea to launch." +
+   location) barely changes per language, so three near-identical
+   images would be maintenance overhead without a real payoff yet.
+
+**Why:** The owner explicitly scoped this as *extracting* the existing
+brand, not designing a new one — outlining the real glyphs from the real
+font file is the literal form of that (as opposed to approximating the
+letterforms by hand), and reusing the exact same geometry for the
+favicon closes a real (if minor) fragility gap discovered while doing
+the extraction, not scope creep.
+
+**How to apply:** Any future JOMO brand asset (business card, a fourth
+locale's OG card if ever needed) should start from `brand/logo/*.svg` or
+`brand/social/jomo-og-1200x630.svg` as source material — they're already
+outlined and portable. If the wordmark or colors ever change on the
+live site, `brand/` needs a matching re-export; it does not update
+itself.
