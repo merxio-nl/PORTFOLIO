@@ -101,6 +101,22 @@
   html {
     background-color: var(--color-ink);
     color-scheme: dark;
+
+    /*
+     * Anchor-nav targets (Nav's #work/#services/#studio/#creator/#contact
+     * links) would otherwise land with the section's heading/eyebrow
+     * tucked under the fixed header. scroll-padding-top on the scrolling
+     * root applies to every anchor jump site-wide — new sections don't
+     * need their own scroll-margin-top. Matches Nav's own header height
+     * per breakpoint (h-14/md:h-16) plus a bit of breathing room.
+     */
+    scroll-padding-top: calc(3.5rem + 1.5rem);
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: calc(4rem + 1.5rem);
+    }
   }
 
   body {

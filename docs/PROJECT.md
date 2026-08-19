@@ -150,8 +150,8 @@ design decisions are recorded here.
   (spec and one-line wiring documented, not invented). See
   `docs/DECISIONS.md` ADR-010.
 - Brand kit + social preview pass: formalized the existing JOMO visual
-  identity (not a redesign) into a dedicated `brand/` directory —
+  identity (not a redesign) into a dedicated `v2/brand/` directory —
   wordmark (light/dark), the favicon-derived mark, PNG exports, font and
   color documentation, and usage rules. Wired the first Open Graph share
   image (`v2/public/og-image.png`) into the site, closing the gap noted
-  above. See `brand/README.md` and `docs/DECISIONS.md` ADR-011.
+  above. See `v2/brand/README.md` and `docs/DECISIONS.md` ADR-011.

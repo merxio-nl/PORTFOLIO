@@ -328,8 +328,8 @@ collection — no sitemap work needed.
 **Date:** 2026-08-19
 **Status:** Accepted
 
-Formalized the existing (not new) JOMO visual identity into `brand/` —
-see `brand/README.md` for the full asset list and usage rules. Two
+Formalized the existing (not new) JOMO visual identity into `v2/brand/` —
+see `v2/brand/README.md` for the full asset list and usage rules. Two
 decisions here are persistent enough to record:
 
 1. **The wordmark and mark are true vector paths, not live text.** The
@@ -342,7 +342,7 @@ decisions here are persistent enough to record:
    font if the real font isn't installed or hasn't loaded yet. Golos
    Text is OFL-licensed, which permits this.
 2. **`v2/public/favicon.svg` was consolidated onto the same path
-   geometry as `brand/logo/jomo-mark.svg`.** It previously rendered its
+   geometry as `v2/brand/logo/jomo-mark.svg`.** It previously rendered its
    "J" as live text — meaning the actual site favicon depended on the
    Golos Text web font loading, for an asset requested as early as any
    resource on the page. Same visual output (verified via a rendered
@@ -350,7 +350,7 @@ decisions here are persistent enough to record:
    favicon/apple-touch-icon rasters were regenerated from the corrected
    source for consistency.
 3. **One neutral English OG image across all three locales**
-   (`v2/public/og-image.png`, sourced from `brand/social/`), not three
+   (`v2/public/og-image.png`, sourced from `v2/brand/social/`), not three
    localized cards. `Base.astro` now emits `og:image` (+ width/height/
    type) and upgrades `twitter:card` to `summary_large_image` with
    `twitter:image`, using the same `Astro.site`-derived absolute-URL
@@ -368,8 +368,8 @@ favicon closes a real (if minor) fragility gap discovered while doing
 the extraction, not scope creep.
 
 **How to apply:** Any future JOMO brand asset (business card, a fourth
-locale's OG card if ever needed) should start from `brand/logo/*.svg` or
-`brand/social/jomo-og-1200x630.svg` as source material — they're already
+locale's OG card if ever needed) should start from `v2/brand/logo/*.svg` or
+`v2/brand/social/jomo-og-1200x630.svg` as source material — they're already
 outlined and portable. If the wordmark or colors ever change on the
-live site, `brand/` needs a matching re-export; it does not update
+live site, `v2/brand/` needs a matching re-export; it does not update
 itself.

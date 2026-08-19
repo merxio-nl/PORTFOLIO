@@ -35,7 +35,7 @@ const defaultURL = new URL(alternateLangPath(Astro.url.pathname, defaultLang), A
 const isProduction = process.env.VERCEL_ENV === 'production';
 
 // One neutral social card across all three locales for now — see
-// brand/README.md and docs/DECISIONS.md ADR-011 for why.
+// v2/brand/README.md and docs/DECISIONS.md ADR-011 for why.
 const ogImageURL = new URL('/og-image.png', Astro.site).toString();
 ---
 

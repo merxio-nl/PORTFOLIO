@@ -146,7 +146,7 @@ separate, later task.
 ## 11. Asset list
 
 ```
-brand/
+v2/brand/
   README.md
   logo/
     jomo-wordmark-dark.svg

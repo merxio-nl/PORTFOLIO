@@ -2,21 +2,30 @@
 
 Astro-based rebuild of the portfolio, alongside the current production
 site at the repository root. See `docs/PROJECT.md` and
-`docs/DECISIONS.md` (ADR-006, ADR-007) at the repo root for background
-and architecture rationale.
+`docs/DECISIONS.md` at the repo root for background and architecture
+rationale (ADR-006/007 for the original stack/IA, ADR-009 for the
+three-locale setup, ADR-010 for the SEO/production-readiness pass,
+ADR-011 for the brand kit).
+
+Everything JOMO-specific — code, content, and brand assets — lives
+inside this directory. Nothing JOMO-related belongs at the repository
+root; see the root `README.md` and `CLAUDE.md` for the full V1/V2
+boundary.
 
 ## Project structure
 
 ```text
 v2/
-├── public/               static assets, served as-is (images, favicon)
+├── brand/                logo/wordmark/OG-card source assets — see brand/README.md
+├── public/               static assets, served as-is (images, favicon, og-image.png)
 ├── src/
 │   ├── components/       shared UI components
-│   │   └── views/        full-page views, parameterized by lang (en/ru)
-│   ├── content/projects/ project data, one folder per locale (en/, ru/)
+│   │   └── views/        full-page views, parameterized by lang (en/ru/nl)
+│   ├── content/projects/ project data, one folder per locale (en/, ru/, nl/)
 │   ├── i18n/              UI copy dictionary + locale helpers
-│   ├── layouts/           Base.astro (document shell, fonts)
-│   ├── pages/             EN routes (RU routes live under pages/ru/)
+│   ├── layouts/           Base.astro (document shell, fonts, metadata)
+│   ├── pages/             EN routes; RU/NL routes live under pages/ru/, pages/nl/;
+│   │                      also sitemap.xml.ts, robots.txt.ts, 404.astro
 │   └── styles/            global.css (design tokens, base styles)
 └── astro.config.mjs
 ```
@@ -35,17 +44,19 @@ All commands run from `v2/`:
 
 ## Adding a project
 
-Add matching `src/content/projects/en/<slug>.json` and
-`src/content/projects/ru/<slug>.json` entries (see `src/content.config.ts`
+Add matching `src/content/projects/en/<slug>.json`,
+`src/content/projects/ru/<slug>.json`, and
+`src/content/projects/nl/<slug>.json` entries (see `src/content.config.ts`
 for the schema). Narrative fields (`problem`/`solution`/`outcome`) are
 optional — leave them unset rather than inventing content for a project
-that doesn't have a full case study yet.
+that doesn't have a full case study yet. New projects automatically
+appear in `sitemap.xml` — no extra step needed.
 
 ## Adding UI copy
 
-Add the string to both the `en` and `ru` blocks in `src/i18n/ui.ts`, then
-reference it via `useTranslations(lang)`. Don't hardcode user-facing text
-into components.
+Add the string to the `en`, `ru`, and `nl` blocks in `src/i18n/ui.ts`,
+then reference it via `useTranslations(lang)`. Don't hardcode user-facing
+text into components.
 
 ## Deployment
 
