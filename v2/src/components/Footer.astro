@@ -1,0 +1,86 @@
+---
+import { useTranslations, localizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="border-t border-[var(--color-hairline)] bg-[var(--color-ink)]">
+  <div class="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
+    <div class="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
+      <div class="max-w-sm">
+        <p class="text-h3 font-display text-[var(--color-paper)]">
+          JOMO<span class="text-[var(--color-brass)]">.</span>
+        </p>
+        <p class="mt-3 text-small text-[var(--color-paper-muted)]">
+          {t('footer.tagline')}
+        </p>
+        <p class="mt-1 text-small text-[var(--color-paper-faint)]">
+          {t('footer.location')}
+        </p>
+      </div>
+
+      <div>
+        <p class="text-eyebrow text-[var(--color-paper-faint)] uppercase">
+          {t('footer.navigate')}
+        </p>
+        <ul class="mt-3 space-y-2 text-nav">
+          <li><a href={localizedPath('/#work', lang)} class="footer-link">{t('nav.work')}</a></li>
+          <li><a href={localizedPath('/#services', lang)} class="footer-link">{t('nav.services')}</a></li>
+          <li><a href={localizedPath('/#studio', lang)} class="footer-link">{t('nav.studio')}</a></li>
+          <li><a href={localizedPath('/#creator', lang)} class="footer-link">{t('nav.creator')}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-eyebrow text-[var(--color-paper-faint)] uppercase">
+          {t('footer.contact')}
+        </p>
+        <ul class="mt-3 space-y-2 text-nav">
+          <li>
+            <a href="mailto:redyamusic@outlook.com" class="footer-link"
+              >redyamusic@outlook.com</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://wa.me/31657337248"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer">WhatsApp</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://t.me/merxio_manager"
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer">Telegram</a
+            >
+          </li>
+          <li class="text-[var(--color-paper-faint)]">{t('footer.location')}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-10 border-t border-[var(--color-hairline)] pt-5 text-small text-[var(--color-paper-faint)]"
+    >
+      <p>{t('footer.copyright')}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-link {
+    color: var(--color-paper-muted);
+    transition: color 0.2s;
+  }
+  .footer-link:hover {
+    color: var(--color-paper);
+  }
+</style>

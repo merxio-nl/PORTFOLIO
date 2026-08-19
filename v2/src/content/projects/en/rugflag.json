@@ -1,0 +1,24 @@
+{
+  "title": "RugFlag",
+  "category": "Handmade rug studio · Netherlands",
+  "tagline": "A bilingual site for a handmade rug studio, with a catalog of finished pieces and the option to commission a custom design.",
+  "featured": false,
+  "order": 3,
+  "summary": "A visual, image-led project built around the work itself. The site lets you browse finished rugs, get a feel for the studio, and see how a custom rug commission works.",
+
+  "location": "Netherlands",
+
+  "liveUrl": "https://merxio-nl.github.io/RugFlagFixed/index.html",
+  "repoUrl": "https://github.com/merxio-nl/RugFlagFixed",
+  "tags": ["HTML/CSS/JS", "i18n", "GitHub Pages"],
+
+  "coverImage": "/images/projects/rugflag/site/desktop.webp",
+  "coverImageAlt": "RugFlag homepage showing a close-up photo of colorful handmade tufted rugs with cartoon and pop-culture designs",
+
+  "siteShowcase": [
+    { "src": "/images/projects/rugflag/site/desktop.webp", "alt": "Desktop screenshot of the RugFlag homepage, showing handmade tufted rugs and the site navigation" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/rugflag/site/mobile.webp", "alt": "Mobile screenshot of the RugFlag homepage" }
+  ]
+}

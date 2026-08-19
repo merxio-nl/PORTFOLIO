@@ -1,0 +1,59 @@
+---
+// A restrained device composition — a browser frame with an optional
+// overlapping phone frame — built from real site screenshots.
+//
+// The phone frame uses a FIXED pixel border-radius (never a percentage).
+// A percentage radius on a tall, narrow box like a phone silhouette
+// resolves to a different horizontal vs. vertical pixel value (CSS
+// percentage radii are computed against width and height separately),
+// which produces a visibly stretched/elliptical corner instead of a
+// clean, uniform one. Fixed radii keep every corner circular regardless
+// of the frame's rendered size.
+interface Props {
+  desktopSrc: string;
+  desktopAlt: string;
+  mobileSrc?: string;
+  mobileAlt?: string;
+  eager?: boolean;
+}
+
+const { desktopSrc, desktopAlt, mobileSrc, mobileAlt, eager = false } = Astro.props;
+---
+
+<div class="relative">
+  <div
+    class="overflow-hidden rounded-xl border border-[var(--color-hairline-strong)] bg-[var(--color-surface)] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.55)]"
+  >
+    <div
+      aria-hidden="true"
+      class="flex items-center gap-1.5 border-b border-[var(--color-hairline)] bg-[var(--color-surface-raised)] px-3 py-2"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-hairline-strong)]"></span>
+    </div>
+    <img
+      src={desktopSrc}
+      alt={desktopAlt}
+      class="aspect-[16/10] w-full object-cover object-top"
+      loading={eager ? 'eager' : 'lazy'}
+    />
+  </div>
+
+  {
+    mobileSrc && (
+      <div class="absolute -bottom-[6%] right-[4%] w-[27%] min-w-[64px] max-w-[220px]">
+        <div class="overflow-hidden rounded-[22px] bg-[var(--color-ink)] p-[5px] shadow-[0_16px_36px_-12px_rgba(0,0,0,0.7)] ring-1 ring-[var(--color-hairline-strong)]">
+          <div class="overflow-hidden rounded-[17px]">
+            <img
+              src={mobileSrc}
+              alt={mobileAlt ?? ''}
+              class="aspect-[9/19.5] w-full object-cover object-top"
+              loading={eager ? 'eager' : 'lazy'}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
+</div>

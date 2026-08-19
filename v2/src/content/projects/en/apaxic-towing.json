@@ -1,0 +1,25 @@
+{
+  "title": "Apaxic Towing",
+  "category": "Towing & roadside assistance · United States",
+  "tagline": "A towing company site that actually brings in customers.",
+  "featured": false,
+  "order": 2,
+  "summary": "A website for a towing company in Washington State, built around one practical job: someone who needs roadside help should be able to find the company fast, understand the service area, and reach the driver right away.",
+
+  "location": "Bonney Lake, Washington, US",
+
+  "liveUrl": "https://apaxictowing.com",
+  "tags": ["Landing page", "Client project", "Towing & roadside", "US"],
+
+  "coverImage": "/images/projects/apaxic-towing/site/desktop.webp",
+  "coverImageAlt": "Apaxic Towing homepage hero: a tow truck at night with the headline 'Fast & Reliable Towing Service' and call/WhatsApp buttons",
+
+  "outcome": "After launch, the site started running alongside search advertising. People find the company through search, land on the site, and contact the owner directly. Some of those enquiries turn into paid towing jobs.",
+
+  "siteShowcase": [
+    { "src": "/images/projects/apaxic-towing/site/desktop.webp", "alt": "Desktop screenshot of the Apaxic Towing homepage hero, with service area details and call/WhatsApp buttons" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/apaxic-towing/site/mobile.webp", "alt": "Mobile screenshot of the Apaxic Towing homepage hero, stacked full-width" }
+  ]
+}

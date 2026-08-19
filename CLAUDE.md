@@ -8,6 +8,29 @@ architect (ChatGPT) and approved by the repository owner, who makes final
 product decisions. GitHub is the shared source of truth between ChatGPT and
 Claude Code.
 
+## Repository structure
+
+This repository contains two distinct things — do not mix them:
+
+- **Repository root** (`index.html`, `assets/`, `favicon/`, `robots.txt`,
+  `sitemap.xml`) — the legacy Portfolio V1, frozen and still the live
+  GitHub Pages production site served from `main`/root. Do not add new
+  JOMO-specific folders here, and do not move/rename these files — GitHub
+  Pages and their own relative paths depend on this exact layout. See
+  `docs/DECISIONS.md` ADR-002.
+- **`v2/`** — the active JOMO Studio application. Every JOMO-specific
+  asset, including brand/logo material (`v2/brand/`), belongs inside
+  `v2/`, never at the repository root. Vercel's project Root Directory
+  is set to `v2` — anything meant to ship or be referenced by the site
+  must live under it.
+- **Repository root docs** (`CLAUDE.md`, `docs/`) — workflow and
+  architecture documentation that governs the whole repository,
+  including both V1 and V2. This stays at root regardless of which
+  project it's currently describing.
+
+If you're about to create a new top-level directory for something
+JOMO-related, it almost certainly belongs under `v2/` instead.
+
 ## Before implementation
 
 - Read `docs/PROJECT.md`, `docs/WORKFLOW.md`, and `docs/DECISIONS.md` (and any
@@ -35,6 +58,13 @@ Claude Code.
   explicitly instructed.
 - Do not silently change product requirements or architecture. Surface any
   such need for a decision instead of assuming one.
+- Major architecture or technology-stack decisions (framework migrations,
+  new build tooling, replacing an already-accepted stack) require explicit
+  repository-owner approval before implementation. Proposing and explaining
+  a change is fine; implementing it without that approval is not. An
+  already-accepted stack (e.g. the V2 Astro/Tailwind/Content Collections
+  setup) should not be rolled back or replaced within a refinement/polish
+  task — only within a task that explicitly scopes that decision.
 - Prefer small, reviewable changes over large or speculative ones.
 
 ## Repository/PR handoff to ChatGPT

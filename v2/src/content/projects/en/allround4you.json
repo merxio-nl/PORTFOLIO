@@ -1,0 +1,49 @@
+{
+  "title": "ALLROUND4YOU",
+  "category": "Construction & renovation · Netherlands",
+  "tagline": "The first website for a construction business that had only ever worked through referrals and WhatsApp.",
+  "featured": true,
+  "order": 1,
+  "summary": "ALLROUND4YOU already had real projects and clients, just no website. The brief was simple: bring everything together in one place, so a prospective customer could see the work, understand the services, and get in touch directly.",
+
+  "client": "ALLROUND4YOU Bouw & Service",
+  "role": "End-to-end: structure, design, copy, development, domain and hosting",
+  "year": "2026",
+  "location": "Netherlands (client active nationwide)",
+  "timeline": "About 20 days, including revisions and back-and-forth",
+
+  "liveUrl": "https://allround4you.com",
+  "tags": ["One-page site", "Client project", "Construction & renovation", "Dutch"],
+
+  "coverImage": "/images/projects/allround4you/hero.jpg",
+  "coverImageAlt": "Renovated open-plan kitchen with exposed timber ceiling beams and pendant lighting, part of ALLROUND4YOU's completed work",
+
+  "facts": [
+    { "label": "Client", "value": "ALLROUND4YOU Bouw & Service" },
+    { "label": "Industry", "value": "Construction & renovation" },
+    { "label": "Origin", "value": "Personal recommendation" },
+    { "label": "Scope", "value": "Structure, design, copy, development, hosting" },
+    { "label": "Revisions", "value": "~6 client rounds" },
+    { "label": "Timeline", "value": "~20 days" }
+  ],
+
+  "problem": "ALLROUND4YOU had never had a website. New clients mostly came through referrals, and everything after that happened over WhatsApp. What was missing was a simple way to show someone the services and finished work before the first conversation even started.",
+  "solution": "I handled the whole project myself: structure, copy, design and development. The site covers the main service categories, photos of finished work, and direct ways to get in touch by phone or WhatsApp. I also set up the domain and hosting, so the client ended up with a working website, not just a design file.",
+  "collaboration": "We stayed in close contact throughout. Details, photos and copy went through a few rounds of revisions along the way, about six in total.",
+  "outcome": "The site is live on its own domain. The client now has a page he can send to a prospective customer instead of explaining the services and forwarding photos every time. He was happy with the result and said he'd recommend me to people he knows.",
+
+  "workGallery": [
+    { "src": "/images/projects/allround4you/hero.jpg", "alt": "Renovated open-plan kitchen with exposed timber ceiling beams and pendant lighting, part of ALLROUND4YOU's completed work" },
+    { "src": "/images/projects/allround4you/gallery/work-6.jpg", "alt": "Built-in kitchen cabinetry finished in dark wood veneer, next to a full-height glazed door opening onto a garden" },
+    { "src": "/images/projects/allround4you/gallery/work-8.jpg", "alt": "Facade renovation in progress on a two-storey house, with new dark cladding, scaffolding and ladders in place" },
+    { "src": "/images/projects/allround4you/gallery/work-4.jpg", "alt": "Finished living room with an exposed timber beam ceiling, an arched floor lamp and a view onto the garden" },
+    { "src": "/images/projects/allround4you/gallery/work-22.webp", "alt": "New patio being laid outside a garden room, with plain grey tiles and one patterned decorative tile as an accent" }
+  ],
+  "siteShowcase": [
+    { "src": "/images/projects/allround4you/site/desktop.webp", "alt": "Desktop screenshot of the ALLROUND4YOU homepage hero: headline, WhatsApp and call buttons, and three trust badges over a project photo" }
+  ],
+  "siteShowcaseMobile": [
+    { "src": "/images/projects/allround4you/site/mobile-hero.webp", "alt": "Mobile screenshot of the ALLROUND4YOU hero section, with the headline, WhatsApp button and call button stacked full-width" },
+    { "src": "/images/projects/allround4you/site/mobile-about.webp", "alt": "Mobile screenshot of the ALLROUND4YOU about and services introduction, stacked below the hero" }
+  ]
+}

@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Deep graphite/charcoal foundation — never pure black. */
+  --color-ink: #0f1113;
+  --color-surface: #16181b;
+  --color-surface-raised: #1d2024;
+  --color-hairline: rgba(244, 243, 239, 0.09);
+  --color-hairline-strong: rgba(244, 243, 239, 0.16);
+
+  /* Warm off-white foreground — never pure white. */
+  --color-paper: #f4f2ed;
+  --color-paper-muted: #a8a9ad;
+  /* Lightened from #6b6d72 to meet WCAG AA (4.5:1) at the small/eyebrow
+     sizes it's actually used at — the original was 3.65:1 on --color-ink. */
+  --color-paper-faint: #7b7e84;
+
+  /* Single controlled accent: warm brass/gold, used sparingly. */
+  --color-brass: #c9a15a;
+
+  /*
+   * Contemporary, restrained system — no ornate/classical serif identity.
+   * Golos Text carries headings: a grotesque with more editorial character
+   * than the previous Manrope (which reads as generic SaaS at this point)
+   * and confirmed full Cyrillic support. Inter stays for body/UI copy,
+   * where neutrality and legibility matter more than personality.
+   */
+  --font-display: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --ease-jomo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /*
+   * Typography system — a small, deliberate set of reusable roles instead
+   * of ad hoc size/weight/line-height combinations per component. Pair
+   * with `font-display` for the heading roles (Display/H1/H2/H3); the
+   * rest inherit Inter from `body` by default. See docs/DECISIONS.md for
+   * the rationale and full role list.
+   */
+
+  /* Display — reserved for the few highest-emphasis statements on the
+     site (the hero line, the JOMO manifesto). Dense and confident rather
+     than simply large: heavier weight, tighter tracking and line-height
+     than H1. Not used for routine section headings. */
+  --text-display: clamp(1.875rem, 1.5rem + 2vw, 2.75rem);
+  --text-display--line-height: 1.12;
+  --text-display--letter-spacing: -0.015em;
+  --text-display--font-weight: 700;
+
+  /* H1 — page-level titles (case-study title, Work index title). */
+  --text-h1: clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem);
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.008em;
+  --text-h1--font-weight: 600;
+
+  /* H2 — section headings (Services, Work, Studio, Creator, Process,
+     Contact). */
+  --text-h2: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
+  --text-h2--line-height: 1.25;
+  --text-h2--letter-spacing: -0.005em;
+  --text-h2--font-weight: 600;
+
+  /* H3 / card title — project titles, service names, case-study labels,
+     the creator's name, process step names. */
+  --text-h3: 1.125rem;
+  --text-h3--line-height: 1.4;
+  --text-h3--font-weight: 600;
+
+  /* Lead — the one supporting line directly under a heading (hero
+     subhead, section intros). */
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.6;
+  --text-lead--font-weight: 400;
+
+  /* Body — running copy: case-study narrative, creator bio, process
+     detail, service summaries. */
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-body--font-weight: 400;
+
+  /* Small — metadata: facts, tags, footer copy, de-emphasized notes. */
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-small--font-weight: 400;
+
+  /* Eyebrow — uppercase section kickers and labels. Pair with
+     `uppercase`. */
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--font-weight: 500;
+
+  /* Nav — nav links, buttons, CTAs: slightly heavier than body text so
+     interactive elements read as interactive. */
+  --text-nav: 0.875rem;
+  --text-nav--line-height: 1.4;
+  --text-nav--font-weight: 500;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ink);
+    color-scheme: dark;
+
+    /*
+     * Anchor-nav targets (Nav's #work/#services/#studio/#creator/#contact
+     * links) would otherwise land with the section's heading/eyebrow
+     * tucked under the fixed header. scroll-padding-top on the scrolling
+     * root applies to every anchor jump site-wide — new sections don't
+     * need their own scroll-margin-top. Matches Nav's own header height
+     * per breakpoint (h-14/md:h-16) plus a bit of breathing room.
+     */
+    scroll-padding-top: calc(3.5rem + 1.5rem);
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: calc(4rem + 1.5rem);
+    }
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+
+  /* Purposeful motion only — never at the cost of a reader who asked for less. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /*
+   * Content is visible by default (no-JS, slow-JS and IntersectionObserver
+   * failure all stay fully readable). JS only adds a one-off entrance
+   * animation on first intersection — it never gates visibility.
+   */
+  [data-reveal].reveal-play {
+    animation: reveal-in 0.7s var(--ease-jomo);
+  }
+
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal].reveal-play {
+      animation: none;
+    }
+  }
+}

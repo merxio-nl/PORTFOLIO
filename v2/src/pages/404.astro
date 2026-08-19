@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// A single static 404 works for any unmatched route under any locale
+// prefix — most static hosts (Vercel included) serve one 404.html
+// site-wide, so there's no clean way to serve a different file per
+// locale without custom host routing config. English is used as the
+// chrome/default language; the nav's language switcher still works
+// normally from here. See docs/DECISIONS.md ADR-010.
+---
+
+<Base title="Page not found — JOMO Studio" description="This page doesn't exist or has moved." lang="en">
+  <Nav lang="en" />
+  <main>
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28">
+      <div class="mx-auto max-w-2xl px-6 text-center md:px-10">
+        <p class="text-eyebrow uppercase text-[var(--color-brass)]">404</p>
+        <h1 class="mt-3 text-h1 font-display text-[var(--color-paper)]">
+          Page not found.
+          <span class="block text-[var(--color-paper-muted)]">Страница не найдена.</span>
+          <span class="block text-[var(--color-paper-muted)]">Pagina niet gevonden.</span>
+        </h1>
+        <p class="mt-4 text-lead text-[var(--color-paper-muted)]">
+          The page you're looking for doesn't exist or has moved.
+        </p>
+        <a
+          href="/"
+          class="mt-8 inline-block rounded-full bg-[var(--color-paper)] px-6 py-3 text-nav text-[var(--color-ink)] transition-opacity duration-200 hover:opacity-90"
+        >
+          Back to JOMO
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</Base>

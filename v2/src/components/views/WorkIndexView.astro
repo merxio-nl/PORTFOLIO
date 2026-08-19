@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Nav from '../Nav.astro';
+import Footer from '../Footer.astro';
+import WorkCard from '../WorkCard.astro';
+import { useTranslations, type Lang } from '../../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`))).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const featured = projects.find((p) => p.data.featured) ?? projects[0];
+const rest = projects.filter((p) => p !== featured);
+
+const meta = {
+  en: {
+    title: 'Work — JOMO Studio',
+    description: "Sites I've built for clients. A quick look at each before opening the full case study.",
+  },
+  ru: {
+    title: 'Работы — JOMO Studio',
+    description: 'Сайты, которые я сделал для клиентов. Коротко, перед тем как открыть полный кейс.',
+  },
+  nl: {
+    title: 'Werk — JOMO Studio',
+    description: 'Sites die ik voor klanten heb gebouwd. Een snel overzicht voordat je de volledige case opent.',
+  },
+} as const;
+---
+
+<Base title={meta[lang].title} description={meta[lang].description} lang={lang}>
+  <Nav lang={lang} />
+  <main>
+    <section class="pt-20 pb-8 md:pt-28 md:pb-10">
+      <div class="mx-auto max-w-6xl px-6 md:px-10">
+        <p class="text-eyebrow uppercase text-[var(--color-brass)]">
+          {t('workIndex.eyebrow')}
+        </p>
+        <h1 class="mt-3 max-w-xl text-h1 font-display text-[var(--color-paper)]">
+          {t('workIndex.heading')}
+        </h1>
+        <p class="mt-3 max-w-lg text-lead text-[var(--color-paper-muted)]">
+          {t('workIndex.subhead')}
+        </p>
+      </div>
+    </section>
+
+    <section class="pb-16 md:pb-20">
+      <div class="mx-auto max-w-6xl px-6 md:px-10">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {featured && (
+            <div class="sm:col-span-2 lg:col-span-2">
+              <WorkCard project={featured} lang={lang} eager />
+            </div>
+          )}
+          {rest.map((project) => (
+            <WorkCard project={project} lang={lang} />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang={lang} />
+</Base>
